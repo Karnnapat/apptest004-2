@@ -18,11 +18,9 @@
         <array key="SukhumvitSet-Bold.ttf">
             <string>SukhumvitSet-Bold</string>
         </array>
-        <array key="SukhumvitSet-SemiBold.ttf">
-            <string>SukhumvitSet-SemiBold</string>
-        </array>
         <array key="sukhumvitsetmedium.ttc">
             <string>SukhumvitSet-Medium</string>
+            <string>SukhumvitSet-SemiBold</string>
         </array>
     </customFonts>
     <scenes>

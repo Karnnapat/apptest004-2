@@ -31,7 +31,9 @@ class Calculator: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        calulatorDisplay.text = String(result)
+        first = String(result)
+        result = 0.00
         
     }
     
@@ -136,6 +138,9 @@ class Calculator: UIViewController {
     }
     
     @IBAction func equalbutton(_ sender: Any) {
+        Equal()
+    }
+    func Equal(){
         second = userInput
         var firstinput = 0.00
         var secondinput = 0.00
@@ -157,12 +162,12 @@ class Calculator: UIViewController {
             function = ""
             break
         case "*":
-            result = firstinput * secondinput 
+            result = firstinput * secondinput
             userInput = ""
             function = ""
             break
         case "/":
-            result = firstinput / secondinput  
+            result = firstinput / secondinput
             userInput = ""
             function = ""
             break
@@ -175,7 +180,6 @@ class Calculator: UIViewController {
         print("result from equal  \(result)\n")
         print("userInput from equal \(userInput)\n")
         print("first from equal \(first)\n")
-
     }
     @IBAction func decimalbutton(_ sender: Any) {
           
@@ -257,6 +261,9 @@ class Calculator: UIViewController {
         }else if first != ""{
             first.removeLast()
             calulatorDisplay.text = first
+        }else if calulatorDisplay.text != "" && calulatorDisplay.text != "0.0"{
+            calulatorDisplay.text?.removeLast()
+            userInput = calulatorDisplay.text ?? "0.00"
         }
         print("userInput  \(userInput)\n")
         print("first  \(first)")
@@ -265,58 +272,110 @@ class Calculator: UIViewController {
     
     @IBAction func btn_acceptincome(_ sender: Any) {
         
-        
         switch addState {
         case .income:
+            Equal()
             //            let storyborad = UIStoryboard(name: "Main", bundle: nil)
             //            let vc = storyborad.instantiateViewController(identifier: "AddincomeViewController") as! AddincomeViewController
         if result > 0 {
             if result != 0 {
-                actionAddCalHandler?(result)
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumFractionDigits = 2
+                numberFormatter.maximumFractionDigits = 2
+                let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                let doubleresult = Double(formattedValue!)
+                actionAddCalHandler?(doubleresult ?? 0.00)
                 //                vc.CalculatorAddincome = result
             }else{
                 if userInput != "" {
                     result = Double(userInput) ?? 0
-                    actionAddCalHandler?(result)
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                 }else{
                     result = Double(first) ?? 0
-                    actionAddCalHandler?(result)
+                    
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                 }
             }
         }else{
             if userInput != "" {
                 result = Double(userInput) ?? 0
-                actionAddCalHandler?(result)
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumFractionDigits = 2
+                numberFormatter.maximumFractionDigits = 2
+                let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                let doubleresult = Double(formattedValue!)
+                actionAddCalHandler?(doubleresult ?? 0.00)
             }else{
                 result = Double(first) ?? 0
-                actionAddCalHandler?(result)
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumFractionDigits = 2
+                numberFormatter.maximumFractionDigits = 2
+                let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                let doubleresult = Double(formattedValue!)
+                actionAddCalHandler?(doubleresult ?? 0.00)
             }
         }
             self.navigationController?.popViewController(animated: true)
 //            self.navigationController?.pushViewController(vc, animated: true)
         case .expenses:
+            Equal()
 //            let storyborad = UIStoryboard(name: "Main", bundle: nil)
 //            let vc = storyborad.instantiateViewController(identifier: "AddincomeViewController") as! AddincomeViewController
             if result > 0 {
                 if result != 0 {
-                    actionAddCalHandler?(result)
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                     //                vc.CalculatorAddexpen = result
                 }else{
                     if userInput != ""   {
                         result = Double(userInput) ?? 0
-                        actionAddCalHandler?(result)
+                        let numberFormatter = NumberFormatter()
+                        numberFormatter.minimumFractionDigits = 2
+                        numberFormatter.maximumFractionDigits = 2
+                        let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                        let doubleresult = Double(formattedValue!)
+                        actionAddCalHandler?(doubleresult ?? 0.00)
                     }else{
                         result = Double(first) ?? 0
-                        actionAddCalHandler?(result)
+                        let numberFormatter = NumberFormatter()
+                        numberFormatter.minimumFractionDigits = 2
+                        numberFormatter.maximumFractionDigits = 2
+                        let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                        let doubleresult = Double(formattedValue!)
+                        actionAddCalHandler?(doubleresult ?? 0.00)
                     }
                 }
             }else{
                 if userInput != "" {
                     result = Double(userInput) ?? 0
-                    actionAddCalHandler?(result)
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                 }else{
                     result = Double(first) ?? 0
-                    actionAddCalHandler?(result)
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                 }
             }
             self.navigationController?.popViewController(animated: true)

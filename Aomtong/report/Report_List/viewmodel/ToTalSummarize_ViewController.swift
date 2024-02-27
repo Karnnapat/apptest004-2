@@ -69,6 +69,9 @@ class ToTalSummarize_ViewController: UIViewController, MMYYYY_dropdownDelegate {
 //        btn_Left.addTarget(self, action: #selector(leftTapAction(_:)), for: .touchUpInside)
 //        AllTapped()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        ReportSumarizeData()
+    }
 //    MARK: - Chart
     func setupBarChart() {
         setupScrollView()

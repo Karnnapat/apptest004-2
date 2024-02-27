@@ -43,6 +43,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
     var Delincomemodel = DelModel()
     var sendreport : ((Any) -> Void)?
     var Autosavemodel : SubAutoSaveRes = SubAutoSaveRes()
+    var editdate = Date()
     public enum stateType {
         case delincome
         case delexpenses
@@ -144,19 +145,34 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
             formatdate.calendar = Calendar(identifier: .gregorian)
             formatdate.locale = Locale(identifier: "th-TH")
             let selectedDay = formatdate.string(from: datetimepicker.date)
+            let editDay = formatdate.string(from: editdate)
 //            let ReDate = Double(datatoDel.timestamp ?? 0)
 //             ReDateStr = convertUnixTimestampToDateString(timestamp: ReDate)
             let DayNow = formatdate.string(from: Date())
 
             if selectedDay < DayNow{
-                self.createincomedatalistmodel.auto_schedule = 1
-                self.btn_statusAutosave.text = "ไม่มี"
-                self.btn_statusAutosave.textColor = .gray
-                self.lb_Autosave.textColor = .gray
-                self.img_Asave.image = UIImage(named: "graysaveauto")
-                self.AoSOptions.image = UIImage(named: "grayopions")
-                btn_SaveAuto.isEnabled = false
-            } else if selectedDay >= DayNow && btn_statusAutosave.text == "ไม่มี" {
+               if selectedDay == editDay{
+                    self.createincomedatalistmodel.auto_schedule = 1
+                    self.btn_statusAutosave.text = "ไม่มี"
+                    self.btn_statusAutosave.textColor = .gray
+                    self.lb_Autosave.textColor = .gray
+                    self.img_Asave.image = UIImage(named: "graysaveauto")
+                    self.AoSOptions.image = UIImage(named: "grayopions")
+                    btn_SaveAuto.isEnabled = false
+                    btn_saveincomelist.isEnabled = false
+                    btn_saveincomelist.backgroundColor = .C_4_C_6_C_9
+               }else{
+                   self.createincomedatalistmodel.auto_schedule = 1
+                   self.btn_statusAutosave.text = "ไม่มี"
+                   self.btn_statusAutosave.textColor = .gray
+                   self.lb_Autosave.textColor = .gray
+                   self.img_Asave.image = UIImage(named: "graysaveauto")
+                   self.AoSOptions.image = UIImage(named: "grayopions")
+                   btn_SaveAuto.isEnabled = false
+                   btn_saveincomelist.isEnabled = true
+                   btn_saveincomelist.backgroundColor = ._81_C_8_E_4
+               }
+            }else if selectedDay >= DayNow {
                 self.btn_statusAutosave.text = AutoSaveIncome
                 self.createincomedatalistmodel.auto_schedule = self.AutoSaveIncomeid
                 self.img_Asave.image = UIImage(named: "Save")
@@ -168,9 +184,10 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.lb_date.textColor = .black
                 datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
-            }else if selectedDay >= DayNow{
+                btn_saveincomelist.isEnabled = true
+                btn_saveincomelist.backgroundColor = ._81_C_8_E_4
+            }else if selectedDay >= DayNow && btn_statusAutosave.text == "ไม่มี" {
                 self.btn_statusAutosave.text = AutoSaveIncome
-                self.btn_statusAutosave.textColor = .black
                 self.createincomedatalistmodel.auto_schedule = self.AutoSaveIncomeid
                 self.img_Asave.image = UIImage(named: "Save")
                 self.AoSOptions.image = UIImage(named: "options")
@@ -181,6 +198,8 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.lb_date.textColor = .black
                 datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
+                btn_saveincomelist.isEnabled = true
+                btn_saveincomelist.backgroundColor = ._81_C_8_E_4
             }else{
                 self.btn_statusAutosave.text = AutoSaveIncome
                 self.createincomedatalistmodel.auto_schedule = self.AutoSaveIncomeid
@@ -193,22 +212,42 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.lb_Autosave.textColor = .black
                 datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
+                btn_saveincomelist.isEnabled = true
+                btn_saveincomelist.backgroundColor = ._81_C_8_E_4
             }
 //            btn_SaveAuto.isEnabled = true
         case 1:
+            segment.selectedSegmentTintColor = .FF_8686
+            btn_calculatornoac.backgroundColor = .FF_8686
+            btn_saveincomelist.backgroundColor = .FF_8686
             formatdate.dateFormat = "yyyy-MM-dd"
             formatdate.calendar = Calendar(identifier: .gregorian)
             formatdate.locale = Locale(identifier: "th-TH")
             let selectedDay = formatdate.string(from: datetimepicker.date)
             let DayNow = formatdate.string(from: Date())
+            let editDay = formatdate.string(from: editdate)
             if selectedDay < DayNow {
-                self.createincomedatalistmodel.auto_schedule = 1
-                self.btn_statusAutosave.text = "ไม่มี"
-                self.btn_statusAutosave.textColor = .gray
-                self.lb_Autosave.textColor = .gray
-                self.img_Asave.image = UIImage(named: "graysaveauto")
-                self.AoSOptions.image = UIImage(named: "grayopions")
-                btn_SaveAuto.isEnabled = false
+                if selectedDay == editDay{
+                     self.createincomedatalistmodel.auto_schedule = 1
+                     self.btn_statusAutosave.text = "ไม่มี"
+                     self.btn_statusAutosave.textColor = .gray
+                     self.lb_Autosave.textColor = .gray
+                     self.img_Asave.image = UIImage(named: "graysaveauto")
+                     self.AoSOptions.image = UIImage(named: "grayopions")
+                     btn_SaveAuto.isEnabled = false
+                     btn_saveincomelist.isEnabled = false
+                     btn_saveincomelist.backgroundColor = .C_4_C_6_C_9
+                }else{
+                    self.createincomedatalistmodel.auto_schedule = 1
+                    self.btn_statusAutosave.text = "ไม่มี"
+                    self.btn_statusAutosave.textColor = .gray
+                    self.lb_Autosave.textColor = .gray
+                    self.img_Asave.image = UIImage(named: "graysaveauto")
+                    self.AoSOptions.image = UIImage(named: "grayopions")
+                    btn_SaveAuto.isEnabled = false
+                    btn_saveincomelist.isEnabled = true
+                    btn_saveincomelist.backgroundColor = .FF_8686
+                }
             } else if selectedDay >= DayNow {
                 self.btn_statusAutosave.text = AutoSaveExpen
                 self.createincomedatalistmodel.auto_schedule = self.AutoSaveExpenid
@@ -221,6 +260,22 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.btn_statusAutosave.textColor = .black
                 datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
+                btn_saveincomelist.isEnabled  = true
+                btn_saveincomelist.backgroundColor = .FF_8686
+            }else if selectedDay >= DayNow && btn_statusAutosave.text == "ไม่มี" {
+                self.btn_statusAutosave.text = AutoSaveExpen
+                self.createincomedatalistmodel.auto_schedule = self.AutoSaveExpenid
+                self.img_Asave.image = UIImage(named: "Save")
+                self.AoSOptions.image = UIImage(named: "options")
+                self.img_calendar.image = UIImage(named: "datetime")
+                self.img_Ots.image = UIImage(named: "opions")
+                self.lb_Autosave.textColor = .black
+                self.lb_date.textColor = .black
+                self.btn_statusAutosave.textColor = .black
+                datetimepicker.isEnabled = true
+                btn_SaveAuto.isEnabled = true
+                btn_saveincomelist.isEnabled  = true
+                btn_saveincomelist.backgroundColor = .FF_8686
             }else{
                 self.btn_statusAutosave.text = AutoSaveExpen
                 self.btn_statusAutosave.textColor = .black
@@ -234,6 +289,8 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.lb_Autosave.textColor = .black
                 datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
+                btn_saveincomelist.isEnabled  = true
+                btn_saveincomelist.backgroundColor = .FF_8686
             }
         default:
             break
@@ -338,7 +395,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "grayopions")
                 self.lb_date.textColor = .gray
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = false
+//                datetimepicker.isEnabled = false
                 self.btn_SaveAuto.isEnabled = false
             }else if ReDateStr! < DayNow && btn_statusAutosave.text == "ไม่มี"{
                 self.btn_statusAutosave.textColor = .gray
@@ -348,7 +405,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "opions")
                 self.lb_date.textColor = .black
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = false
             } else if ReDateStr! >= DayNow && btn_statusAutosave.text == "ไม่มี"{
                 self.btn_statusAutosave.text = datatoDel.save_auto_name
@@ -360,7 +417,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.btn_statusAutosave.textColor = .black
                 self.lb_Autosave.textColor = .black
                 self.lb_date.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else if self.datatoDel.save_auto_id == 1{
                 self.btn_statusAutosave.text = datatoDel.save_auto_name
@@ -372,7 +429,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "opions")
                 self.lb_date.textColor = .black
                 self.lb_Autosave.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else if btn_statusAutosave.text != "ไม่มี" && ReDateStr! < DayNow {
                 self.btn_statusAutosave.textColor = .gray
@@ -382,7 +439,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_calendar.image = UIImage(named: "graycalendar")
                 self.img_Ots.image = UIImage(named: "grayopions")
                 self.lb_date.textColor = .gray
-                datetimepicker.isEnabled = false
+//                datetimepicker.isEnabled = false
                 btn_SaveAuto.isEnabled = false
             }else{
                 self.btn_statusAutosave.textColor = .gray
@@ -392,14 +449,18 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "grayopions")
                 self.lb_date.textColor = .gray
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = false
+//                datetimepicker.isEnabled = false
                 btn_SaveAuto.isEnabled = false
             }
             result_TF.text = self.datatoDel.amount
             Updateincomemodel.income_id = self.datatoDel.transaction_id
+            handleDatetimePickerValueChange()
         case .delexpenses:
             lb_ShowTital.text = "แก้ไข"
             segment.selectedSegmentIndex = 1
+            segment.selectedSegmentTintColor = .FF_8686
+            btn_calculatornoac.backgroundColor = .FF_8686
+            btn_saveincomelist.backgroundColor = .FF_8686
             hideorshowline.isHidden =  false
             btn_DelData.isHidden = false
             
@@ -413,7 +474,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
             let DayNow = formatdate.string(from: Date())
             self.btn_statusAutosave.text = self.dataExpensestoDel.save_auto_name
             if self.dataExpensestoDel.save_auto_id != 1{
-                self.datetimepicker.isEnabled = false
+//                self.datetimepicker.isEnabled = false
                 self.btn_statusAutosave.textColor = .gray
                 self.img_Asave.image = UIImage(named: "graysaveauto")
                 self.AoSOptions.image = UIImage(named: "grayopions")
@@ -430,7 +491,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "opions")
                 self.lb_date.textColor = .black
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = false
             } else if ReDateStr! >= DayNow && btn_statusAutosave.text == "ไม่มี"{
                 self.btn_statusAutosave.text = dataExpensestoDel.save_auto_name
@@ -443,7 +504,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.lb_date.textColor = .black
                 self.btn_statusAutosave.textColor = .black
                 self.lb_Autosave.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else if self.dataExpensestoDel.save_auto_id == 1{
                 self.btn_statusAutosave.text = dataExpensestoDel.save_auto_name
@@ -455,7 +516,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.btn_statusAutosave.textColor = .black
                 self.lb_Autosave.textColor = .black
                 self.lb_date.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else{
                 self.img_Asave.image = UIImage(named: "graysaveauto")
@@ -469,6 +530,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
             }
             result_TF.text = self.dataExpensestoDel.amount
             Updateexpensesmodel.expenses_id = self.dataExpensestoDel.transaction_id
+            handleDatetimePickerValueChange()
         case .Autosaveincome:
             lb_ShowTital.text = "แก้ไข"
             segment.selectedSegmentIndex = 0
@@ -489,7 +551,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "grayopions")
                 self.lb_date.textColor = .gray
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = false
+//                datetimepicker.isEnabled = false
                 self.btn_SaveAuto.isEnabled = false
             }else if ReDateStr! < DayNow && btn_statusAutosave.text == "ไม่มี"{
                 self.btn_statusAutosave.textColor = .gray
@@ -499,7 +561,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "opions")
                 self.lb_date.textColor = .black
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = false
             } else if ReDateStr! >= DayNow && btn_statusAutosave.text == "ไม่มี"{
                 self.btn_statusAutosave.text = Autosavemodel.save_auto_name
@@ -511,7 +573,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.btn_statusAutosave.textColor = .black
                 self.lb_Autosave.textColor = .black
                 self.lb_date.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else if self.Autosavemodel.save_auto_id == 1{
                 self.btn_statusAutosave.text = Autosavemodel.save_auto_name
@@ -523,7 +585,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "opions")
                 self.lb_date.textColor = .black
                 self.lb_Autosave.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else if btn_statusAutosave.text != "ไม่มี" && ReDateStr! < DayNow {
                 self.btn_statusAutosave.textColor = .gray
@@ -533,7 +595,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_calendar.image = UIImage(named: "graycalendar")
                 self.img_Ots.image = UIImage(named: "grayopions")
                 self.lb_date.textColor = .gray
-                datetimepicker.isEnabled = false
+//                datetimepicker.isEnabled = false
                 btn_SaveAuto.isEnabled = false
             }else{
                 self.btn_statusAutosave.textColor = .gray
@@ -543,14 +605,18 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "grayopions")
                 self.lb_date.textColor = .gray
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = false
+//                datetimepicker.isEnabled = false
                 btn_SaveAuto.isEnabled = false
             }
+            handleDatetimePickerValueChange()
 //            result_TF.text = self.datatoDel.amount
 //            Updateincomemodel.income_id = self.datatoDel.transaction_id
         case .Autosaveexpenses:
             lb_ShowTital.text = "แก้ไข"
             segment.selectedSegmentIndex = 1
+            segment.selectedSegmentTintColor = .FF_8686
+            btn_calculatornoac.backgroundColor = .FF_8686
+            btn_saveincomelist.backgroundColor = .FF_8686
             hideorshowline.isHidden =  false
             btn_DelData.isHidden = false
             
@@ -564,7 +630,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
             let DayNow = formatdate.string(from: Date())
             self.btn_statusAutosave.text = self.Autosavemodel.save_auto_name
             if self.Autosavemodel.save_auto_id != 1{
-                self.datetimepicker.isEnabled = false
+//                self.datetimepicker.isEnabled = false
                 self.btn_statusAutosave.textColor = .gray
                 self.img_Asave.image = UIImage(named: "graysaveauto")
                 self.AoSOptions.image = UIImage(named: "grayopions")
@@ -581,7 +647,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "opions")
                 self.lb_date.textColor = .black
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = false
             } else if ReDateStr! >= DayNow && btn_statusAutosave.text == "ไม่มี"{
                 self.btn_statusAutosave.text = Autosavemodel.save_auto_name
@@ -594,7 +660,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.lb_date.textColor = .black
                 self.btn_statusAutosave.textColor = .black
                 self.lb_Autosave.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else if self.Autosavemodel.save_auto_id == 1{
                 self.btn_statusAutosave.text = Autosavemodel.save_auto_name
@@ -606,7 +672,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.btn_statusAutosave.textColor = .black
                 self.lb_Autosave.textColor = .black
                 self.lb_date.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else{
                 self.img_Asave.image = UIImage(named: "graysaveauto")
@@ -618,6 +684,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.btn_statusAutosave.textColor = .gray
                 btn_SaveAuto.isEnabled = false
             }
+            handleDatetimePickerValueChange()
     case .income:
             lb_ShowTital.text = "แก้ไข"
             segment.selectedSegmentIndex = 0
@@ -640,7 +707,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "grayopions")
                 self.lb_date.textColor = .gray
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = false
+//                datetimepicker.isEnabled = false
                 self.btn_SaveAuto.isEnabled = false
             }else if ReDateStr! < DayNow && btn_statusAutosave.text == "ไม่มี"{
                 self.btn_statusAutosave.textColor = .gray
@@ -650,7 +717,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "opions")
                 self.lb_date.textColor = .black
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = false
             } else if ReDateStr! >= DayNow && btn_statusAutosave.text == "ไม่มี"{
                 self.btn_statusAutosave.text = dataIncomeSumlist.save_auto_name
@@ -662,7 +729,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.btn_statusAutosave.textColor = .black
                 self.lb_Autosave.textColor = .black
                 self.lb_date.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else if self.datatoDel.save_auto_id == 1{
                 self.btn_statusAutosave.text = dataIncomeSumlist.save_auto_name
@@ -674,7 +741,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "opions")
                 self.lb_date.textColor = .black
                 self.lb_Autosave.textColor = .black
-                datetimepicker.isEnabled = true
+//                datetimepicker.isEnabled = true
                 btn_SaveAuto.isEnabled = true
             }else if btn_statusAutosave.text != "ไม่มี" && ReDateStr! < DayNow {
                 self.btn_statusAutosave.textColor = .gray
@@ -684,7 +751,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_calendar.image = UIImage(named: "graycalendar")
                 self.img_Ots.image = UIImage(named: "grayopions")
                 self.lb_date.textColor = .gray
-                datetimepicker.isEnabled = false
+//                datetimepicker.isEnabled = false
                 btn_SaveAuto.isEnabled = false
             }else{
                 self.btn_statusAutosave.textColor = .gray
@@ -694,13 +761,16 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 self.img_Ots.image = UIImage(named: "grayopions")
                 self.lb_date.textColor = .gray
                 self.lb_Autosave.textColor = .gray
-                datetimepicker.isEnabled = false
+//                datetimepicker.isEnabled = false
                 btn_SaveAuto.isEnabled = false
             }
             Updateincomemodel.income_id = self.dataIncomeSumlist.transaction_id ?? 0
     case .expenses:
                     lb_ShowTital.text = "แก้ไข"
                     segment.selectedSegmentIndex = 1
+                    segment.selectedSegmentTintColor = .FF_8686
+                    btn_calculatornoac.backgroundColor = .FF_8686
+                    btn_saveincomelist.backgroundColor = .FF_8686
                     hideorshowline.isHidden =  false
                     btn_DelData.isHidden = false
                     
@@ -731,7 +801,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                         self.img_Ots.image = UIImage(named: "opions")
                         self.lb_date.textColor = .black
                         self.lb_Autosave.textColor = .gray
-                        datetimepicker.isEnabled = true
+//                        datetimepicker.isEnabled = true
                         btn_SaveAuto.isEnabled = false
                     } else if ReDateStr! >= DayNow && btn_statusAutosave.text == "ไม่มี"{
                         self.btn_statusAutosave.text = dataExpensesSumlist.save_auto_name
@@ -744,7 +814,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                         self.lb_date.textColor = .black
                         self.btn_statusAutosave.textColor = .black
                         self.lb_Autosave.textColor = .black
-                        datetimepicker.isEnabled = true
+//                        datetimepicker.isEnabled = true
                         btn_SaveAuto.isEnabled = true
                     }else if self.dataIncomeSumlist.save_auto_id == 1{
                         self.btn_statusAutosave.text = dataExpensesSumlist.save_auto_name
@@ -756,7 +826,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                         self.btn_statusAutosave.textColor = .black
                         self.lb_Autosave.textColor = .black
                         self.lb_date.textColor = .black
-                        datetimepicker.isEnabled = true
+//                        datetimepicker.isEnabled = true
                         btn_SaveAuto.isEnabled = true
                     }else{
                         self.img_Asave.image = UIImage(named: "graysaveauto")
@@ -770,12 +840,14 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                     }
 //            result_TF.text = self.dataExpensestoDel.amount
 //            Updateexpensesmodel.expenses_id = self.dataExpensestoDel.transaction_id
+            handleDatetimePickerValueChange()
         default:
             lb_ShowTital.text = "เพิ่มรายการ"
             segment.selectedSegmentIndex = 0
             view_Del.isHidden = true
             hideorshowline.isHidden =  true
             btn_DelData.isHidden = true
+            handleDatetimePickerValueChange()
         }
     }
    
@@ -792,10 +864,13 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
         switch delState {
         case .delincome:
             segment.selectedSegmentIndex = 0
+            segment.selectedSegmentTintColor = ._81_C_8_E_4
+            btn_calculatornoac.backgroundColor = ._81_C_8_E_4
+            btn_saveincomelist.backgroundColor = ._81_C_8_E_4
             if segment.selectedSegmentIndex == 0{
                 let deldate = Double(datatoDel.timestamp ?? 0)
-                let date = Date(timeIntervalSince1970: deldate)
-                datetimepicker.date = date
+                editdate = Date(timeIntervalSince1970: deldate)
+                datetimepicker.date = editdate
                 self.lb_SelectedType.text = self.datatoDel.type_name
                 self.lb_SelectedCategory.text = self.datatoDel.category_name
                 if self.datatoDel.description != ""{
@@ -814,14 +889,16 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 Updateincomemodel.createdateTime = self.datatoDel.timestamp ?? 0
                 IncomeTap()
             }
+            handleDatetimePickerValueChange()
         case .delexpenses :
             segment.selectedSegmentTintColor = .FF_8686
             btn_calculatornoac.backgroundColor = .FF_8686
+            btn_saveincomelist.backgroundColor = .FF_8686
             segment.selectedSegmentIndex = 1
             if segment.selectedSegmentIndex == 1{
             let deldate = Double(dataExpensestoDel.timestamp ?? 0)
-            let date = Date(timeIntervalSince1970: deldate)
-            datetimepicker.date = date
+            editdate = Date(timeIntervalSince1970: deldate)
+            datetimepicker.date = editdate
             self.lb_SelectedType.text = self.dataExpensestoDel.type_name
             self.lb_SelectedCategory.text = self.dataExpensestoDel.category_name
             if self.dataExpensestoDel.description != ""{
@@ -845,8 +922,12 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
 //            result_TF.text = self.dataExpensestoDel.amount
             ExpenseTap()
         }
+            handleDatetimePickerValueChange()
         case .Autosaveincome:
             segment.selectedSegmentIndex = 0
+            segment.selectedSegmentTintColor = ._81_C_8_E_4
+            btn_calculatornoac.backgroundColor = ._81_C_8_E_4
+            btn_saveincomelist.backgroundColor = ._81_C_8_E_4
             if segment.selectedSegmentIndex == 0{
                 result_TF.text = self.Autosavemodel.amount
 //                self.CalculatorAddincome = Double(self.Autosavemodel.amount ?? "") ?? 0.00
@@ -874,9 +955,11 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
                 Updateincomemodel.createdateTime = self.Autosavemodel.timestamp ?? 0
                 IncomeTap()
             }
+            handleDatetimePickerValueChange()
         case .Autosaveexpenses:
             segment.selectedSegmentTintColor = .FF_8686
             btn_calculatornoac.backgroundColor = .FF_8686
+            btn_saveincomelist.backgroundColor = .FF_8686
             segment.selectedSegmentIndex = 1
             if segment.selectedSegmentIndex == 1{
             result_TF.text = self.Autosavemodel.amount
@@ -912,9 +995,11 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
 //            result_TF.text = self.dataExpensestoDel.amount
             ExpenseTap()
         }
+            handleDatetimePickerValueChange()
     case .income:
                 segment.selectedSegmentTintColor = ._81_C_8_E_4
                 btn_calculatornoac.backgroundColor = ._81_C_8_E_4
+                btn_saveincomelist.backgroundColor = ._81_C_8_E_4
                 segment.selectedSegmentIndex = 0
                 if segment.selectedSegmentIndex == 0{
                 result_TF.text = self.dataIncomeSumlist.amount
@@ -950,9 +1035,11 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
     //            result_TF.text = self.dataExpensestoDel.amount
                 IncomeTap()
             }
+            handleDatetimePickerValueChange()
     case .expenses:
                 segment.selectedSegmentTintColor = .FF_8686
                 btn_calculatornoac.backgroundColor = .FF_8686
+                btn_saveincomelist.backgroundColor = .FF_8686
                 segment.selectedSegmentIndex = 1
                 if segment.selectedSegmentIndex == 1{
                 result_TF.text = self.dataExpensesSumlist.amount
@@ -988,6 +1075,7 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
     //            result_TF.text = self.dataExpensestoDel.amount
                 ExpenseTap()
             }
+            handleDatetimePickerValueChange()
         default:
             segment.selectedSegmentTintColor = ._81_C_8_E_4
             btn_calculatornoac.backgroundColor = ._81_C_8_E_4
@@ -1000,7 +1088,9 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
             let result = String(CalculatorAddincome)
             result_TF.text = result
             IncomeTap()
+            handleDatetimePickerValueChange()
         }
+        
     }
     
     @IBAction func didchangesegment(_ sender: UISegmentedControl) {
@@ -1870,11 +1960,19 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
         let vc = storyborad.instantiateViewController(identifier: "Calculator") as! Calculator
         self.navigationController?.pushViewController(vc, animated: true)
         vc.addState = .income
+        let filteredString = result_TF.text?.filter { $0.isNumber || $0 == "."}
+        let doubleresult = Double(filteredString ?? "")
+        vc.result = doubleresult ?? 0.00
             
         vc.addCalAction(handleraddtotal: { addresult in
             self.CalculatorAddincome = addresult
 //            self.createincomedatalistmodel.amount = addresult
-            self.result_TF.text = String(addresult)
+            let resultstring = String(addresult)
+            if resultstring.count > 13{
+                self.result_TF.text = "999999999.99"
+            }else{
+                self.result_TF.text = String(addresult)
+            }
             
             switch self.delState {
             case .delincome:
@@ -2183,10 +2281,14 @@ class AddincomeViewController: UIViewController, UITextFieldDelegate {
         if segment.selectedSegmentIndex == 0 {
             switch delState {
             case .delincome:
-                let filteredString = datatoDel.amount!.filter { $0.isNumber || $0 == "."}
-                textField.text = String(filteredString)
-                let doubleTF = Double(textField.text ?? "")
-                CalculatorAddincome = doubleTF ?? 0
+                if CalculatorAddincome == 0.0 {
+                    let filteredString = datatoDel.amount!.filter { $0.isNumber || $0 == "."}
+                    textField.text = String(filteredString)
+                    let doubleTF = Double(textField.text ?? "")
+                    CalculatorAddincome = doubleTF ?? 0
+                }else if CalculatorAddincome != 0.0{
+                    textField.text = String(CalculatorAddincome)
+                }
             case .delexpenses:
                 break
             case .Autosaveincome:

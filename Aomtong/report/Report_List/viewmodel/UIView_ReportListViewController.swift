@@ -58,6 +58,11 @@ class UIView_ReportListViewController: UIViewController, UITableViewDelegate, UI
         setupSegment()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        ReportSumarizeData()
+        ReportlistSumarizeData()
+    }
+    
     func inittableview(){
         if table_Report.delegate == nil{
             table_Report.delegate = self

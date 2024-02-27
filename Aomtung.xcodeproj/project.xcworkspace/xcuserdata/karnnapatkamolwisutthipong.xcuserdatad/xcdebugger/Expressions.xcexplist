@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "createpincode.checkAndShowResult(_:):createpincode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(&quot;\(savedPIN)&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MMYYYY_dropdown.btn_AcceptDateaction(_:):MMYYYY_dropdown.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "strDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Calculator.equalbutton(_:):Calculator.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "totalResult">
+            </PersistentString>
+            <PersistentString
+               value = "result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "passcode.checkConditionForNextPage(_:):passcode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(savedPIN)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.manageDataMonth():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Date()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.IncomeTypeTap():AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "passcode.collectionView(_:cellForItemAt:):passcode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrText.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.viewDidLoad():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segment.selectedSegmentIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MMYYYY_dropdown.tableView(_:numberOfRowsInSection:):MMYYYY_dropdown.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MMYYYY_data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.didchangesegment(_:):AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.selectedSegmentIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "passcode.digitButtonTapped(_:):passcode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrText">
+            </PersistentString>
+            <PersistentString
+               value = "currentPIN">
+            </PersistentString>
+            <PersistentString
+               value = "sender.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MMYYYY_dropdown.viewDidLoad():MMYYYY_dropdown.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "months">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MMYYYY_dropdown.manageCalendar():MMYYYY_dropdown.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "year">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.handleChangeSegment(notification:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(&quot;\(segmentIndex)&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

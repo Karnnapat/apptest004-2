@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #2 in AddincomeViewController.autosaveExpenseTap():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "btn_statusAutosave.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in Register.regisPhoneNumber():Register.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProfileViewController.refreshData(_:):ProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ApiRouter.asURLRequest():ApiRouter.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "path">
+            </PersistentString>
+            <PersistentString
+               value = "method">
+            </PersistentString>
+            <PersistentString
+               value = "method.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.collectionView(_:cellForItemAt:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getreportRes">
+            </PersistentString>
+            <PersistentString
+               value = "print(ReDateStr)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Income_Expenses.viewDidLoad():Income_Expenses.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "reportListVC">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OTPViewController.regisPhoneNumber():OTPViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.getreportDataApi():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "questionMark">
+            </PersistentString>
+            <PersistentString
+               value = "reportsendModel.idmember">
+            </PersistentString>
+            <PersistentString
+               value = "startDate">
+            </PersistentString>
+            <PersistentString
+               value = "dataType">
+            </PersistentString>
+            <PersistentString
+               value = "endDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "IncomeType.tableView(_:cellForRowAt:):IncomeType.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getIncometype">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in AutoSaveViewController.CreatelistData():AutoSaveViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "IncomeType.tableView(_:numberOfRowsInSection:):IncomeType.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getIncometype">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.textFieldDidBeginEditing(_:):AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textField.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ExpensesType.tableView(_:cellForRowAt:):ExpensesType.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getExpensestype.count">
+            </PersistentString>
+            <PersistentString
+               value = "getExpensestype[indexPath.row].type">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.manageDataMonth():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "accountSetting.textField(_:shouldChangeCharactersIn:replacementString:):accountSetting.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Username_tf.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in passcode.loginAccount():passcode.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ViewController.reportData():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "reportsendModel.idmember">
+            </PersistentString>
+            <PersistentString
+               value = "endDate">
+            </PersistentString>
+            <PersistentString
+               value = "startDate">
+            </PersistentString>
+            <PersistentString
+               value = "dataType">
+            </PersistentString>
+            <PersistentString
+               value = "getreportRes">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AutoSaveViewController.collectionView(_:numberOfItemsInSection:):AutoSaveViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lb_DropDownSelected.text">
+            </PersistentString>
+            <PersistentString
+               value = "Autosavemodel.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NoteOption.textField(_:shouldChangeCharactersIn:replacementString:):NoteOption.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "number">
+            </PersistentString>
+            <PersistentString
+               value = "UpdateNote">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateUsername.textField(_:shouldChangeCharactersIn:replacementString:):CreateUsername.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AccountModel.username">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in passcode.ForgetPIN():passcode.swift">
+      </ContextState>
+      <ContextState
+         contextName = "passcode.CheckState(_:):passcode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "thisState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateUsername.CreateAccount():CreateUsername.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "phoneforcreate">
+            </PersistentString>
+            <PersistentString
+               value = "AccountModel">
+            </PersistentString>
+            <PersistentString
+               value = "AccountModel.username">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OTPViewController.textFieldDidChange(_:):OTPViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " textField.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Income_Expenses.labelnum2Tapped():Income_Expenses.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.CreatelistDataApi(data:):AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.CreateexpenseslistDataApi(data:):AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "passcode.digitButtonTapped(_:):passcode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrText">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "confirmDelAccount.DelAccountDataApi():confirmDelAccount.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DelAccountemodel.id.convertToStrin">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MMYYYY_dropdown.pickerView(_:numberOfRowsInComponent:):MMYYYY_dropdown.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "years.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.DelIncomeDataApi():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Delincomemodel">
+            </PersistentString>
+            <PersistentString
+               value = "print(Delincomemodel.id)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ViewController.tableView(_:cellForRowAt:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.getreportRes.first?.report_month_list_income?.first?.total_Income_Certain">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in AddincomeViewController.Updateincomedata():AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.textFieldDidEndEditing(_:):AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MMYYYY_dropdown.pickerView(_:didSelectRow:inComponent:):MMYYYY_dropdown.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "strDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in AddincomeViewController.autosaveIncomeTap():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Date()">
+            </PersistentString>
+            <PersistentString
+               value = "datetimepicker.date ">
+            </PersistentString>
+            <PersistentString
+               value = "ReDateStr">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.viewDidLoad():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DayNow">
+            </PersistentString>
+            <PersistentString
+               value = "btn_statusAutosave.text">
+            </PersistentString>
+            <PersistentString
+               value = "ReDateStr">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "accountSetting.DelAcount():accountSetting.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "vc.thisState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ToTalSummarize_ViewController.setupBarChart():ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "incomeData">
+            </PersistentString>
+            <PersistentString
+               value = "ageRanges.count">
+            </PersistentString>
+            <PersistentString
+               value = "self.reportforGraphDataRes?.dataOfList.map({$0.totalIncome})">
+            </PersistentString>
+            <PersistentString
+               value = "Dincometotal">
+            </PersistentString>
+            <PersistentString
+               value = "Int(self.reportSumDataRes.first?.total_income ?? &quot;&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(strDate)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in ToTalSummarize_ViewController.setupBarChart():ToTalSummarize_ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "OTPViewController.ConfirmOTP():OTPViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ComfirmModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OTPViewController.updateCountdownService():OTPViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.countTime">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.Updateincomedata():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "resData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NoteOption.textFieldDidEndEditing(_:):NoteOption.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "noneNote">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ApiClient.requestAPI&lt;&#x3c4;_0_0&gt;(_:):ApiClient.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in OTPViewController.UpdatePhonedata():OTPViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.appdelegate?.saveToUserInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.didchangesegment(_:):AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.datatoDel.report_month_list_income?.first?.report_List?.first?.type_name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MMYYYY_dropdown.pickerView(_:viewForRow:forComponent:reusing:):MMYYYY_dropdown.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "years">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Register.textField(_:shouldChangeCharactersIn:replacementString:):Register.swift">
+      </ContextState>
+      <ContextState
+         contextName = "NoteOption.textFieldDidBeginEditing(_:):NoteOption.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "noneNote">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "IncomeType.tableView(_:didSelectRowAt:):IncomeType.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(incomeType.id)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.GetCategoryIncome():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "resData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.textFieldShouldEndEditing(_:):AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CalculatorAddincome">
+            </PersistentString>
+            <PersistentString
+               value = "textField.text">
+            </PersistentString>
+            <PersistentString
+               value = "datatoDel.amount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "accountSetting.textFieldDidEndEditing(_:):accountSetting.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "username = textField.text ?? &quot;&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "Editusernamemodel.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.CreatelistData():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(resData)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "passcode.loginAccount():passcode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrText.joined()">
+            </PersistentString>
+            <PersistentString
+               value = "phonesend">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.reportData():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getreportDataApi()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in AddincomeViewController.ExpensesTypeTap():AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "confirmDelAccount.DelAccountData():confirmDelAccount.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DelAccountemodel.id.convertToString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AutoSaveViewController.collectionView(_:cellForItemAt:):AutoSaveViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Autosavemodel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AutoSaveViewController.viewDidAppear(_:):AutoSaveViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "resData.data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ToTalSummarize_ViewController.viewDidLoad():ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DateNow">
+            </PersistentString>
+            <PersistentString
+               value = "lb_Date.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.GettypeExpenses():AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AutoSaveViewController.AutoSaveDataApi(data:):AutoSaveViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "UIView_ReportListViewController.DidChangeSegment(_:):UIView_ReportListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Sat">
+            </PersistentString>
+            <PersistentString
+               value = "NewSaturday">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in AddincomeViewController.Updateincomedata():AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ToTalSummarize_ViewController.ReportSumarizeDataApi(data:):ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ReportSumarizemodel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "IncomeAutoSave.tableView(_:didSelectRowAt:):IncomeAutoSave.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "SaveAuto[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ToTalSummarize_ViewController.ReportForGraphData():ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ReportSumarizemodel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ExpenseAutoSaveVC.tableView(_:didSelectRowAt:):ExpenseAutoSaveVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(SaveAuto[indexPath.row].frequency ?? &quot;&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in UIView_ReportListViewController.Dropdown():UIView_ReportListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DateNow">
+            </PersistentString>
+            <PersistentString
+               value = "self.lb_showDate.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.startOfMonth">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in AddincomeViewController.CreateexpenseslistData():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data : CreateDatalistModel) -&gt; Observable&lt;CreateDatalistRes&gt;">
+            </PersistentString>
+            <PersistentString
+               value = "createincomedatalistmodel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #7 in ToTalSummarize_ViewController.setupBarChart():ToTalSummarize_ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ToTalSummarize_ViewController.setupScrollView():ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MainView?.addSubview(scrollView)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in passcode.authenticateWithFaceID():passcode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "btn_saveincomelist">
+            </PersistentString>
+            <PersistentString
+               value = "print(getPIN)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProfileViewController.viewDidLoad():ProfileViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ToTalSummarize_ViewController.setupSegment():ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Segment.selectedSegmentIndex">
+            </PersistentString>
+            <PersistentString
+               value = "startOfDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ApiClient.requestAPI&lt;&#x3c4;_0_0&gt;(_:):ApiClient.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ToTalSummarize_ViewController.leftTapAction(_:):ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NewSunday">
+            </PersistentString>
+            <PersistentString
+               value = "newstartOfMonth">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in OTPViewController.ConfirmOTP():OTPViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.ComfirmModel.phone">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NoteExpenseVC.viewDidLoad():NoteExpenseVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "noneexNote">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in AddincomeViewController.CreatelistData():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(self.createincomedatalistmodel)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.setupSegment():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "date">
+            </PersistentString>
+            <PersistentString
+               value = "createincomedatalistmodel.auto_schedule">
+            </PersistentString>
+            <PersistentString
+               value = "self.lb_SelectedType.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CategoryVC.collectionView(_:cellForItemAt:):CategoryVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cateExpensesimg">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.autosaveIncomeTap():AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "passcode.OTPforgetpin():passcode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "otpforgetpinmodel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.handleTap():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "createincomedatalistmodel.amount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in ToTalSummarize_ViewController.setupBarChart():ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ranges">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UIView_ReportListViewController.tableView(_:numberOfRowsInSection:):UIView_ReportListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.reportSulistmDataRes.first?.report_List_ALL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.UpdateIncomeAPI(data:):AddincomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in AddincomeViewController.Delexpenses():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Delincomemodel.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UIView_ReportListViewController.inittableview():UIView_ReportListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.reportSulistmDataRes.first?.report_List_ALL.count ?? 0">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AutoSaveViewController.CreatelistData():AutoSaveViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in UIView_ReportListViewController.Dropdown():UIView_ReportListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.EndOfMonth">
+            </PersistentString>
+            <PersistentString
+               value = "self.startOfMonth">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in AddincomeViewController.IncomeTypeTap():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(incomeType.id)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in Register.URLSend():Register.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.collectionView(_:didSelectItemAt:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getreportRes">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ToTalSummarize_ViewController.ReportSumarizeData():ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.reportSumDataRes.first?.total_income">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ToTalSummarize_ViewController.didchangesegment(_:):ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "firstSunday">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "passcode.ForgetPIN():passcode.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CreateUsername.saveToUserInfo(model:):CreateUsername.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.AllsaveIncomelistTap():AddincomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.createincomedatalistmodel.auto_schedule">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ToTalSummarize_ViewController.rightTapAction(_:):ToTalSummarize_ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NewSaturday">
+            </PersistentString>
+            <PersistentString
+               value = "startOfDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ToTalSummarize_ViewController.setupBarChart():ToTalSummarize_ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in OTPViewController.regisPhoneNumber():OTPViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "phoneModel.phone">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in accountSetting.UpdateUsernamedata():accountSetting.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "username">
+            </PersistentString>
+            <PersistentString
+               value = "UserInfo">
+            </PersistentString>
+            <PersistentString
+               value = "self.appdelegate?.loadUserInfo()">
+            </PersistentString>
+            <PersistentString
+               value = "self.appdelegate?.loadUserInfo().username">
+            </PersistentString>
+            <PersistentString
+               value = "print(self.appdelegate?.loadUserInfo().username ?? &quot;&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "createpincode.checkAndShowResult(_:):createpincode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "pincode">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AutoSaveViewController.viewDidLoad():AutoSaveViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lb_DropDownSelected.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UIView_ReportListViewController.btn_right(_:):UIView_ReportListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "startOfMonth">
+            </PersistentString>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddincomeViewController.btn_back(_:):AddincomeViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (5.8.1)
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
+  - DropDown (2.3.13)
+  - EGPieChart (0.1.4)
+  - KeychainSwift (20.0.0)
+  - RxSwift (6.6.0)
+  - SwiftAlgorithms (1.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Charts
+  - DropDown
+  - EGPieChart
+  - KeychainSwift
+  - RxSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Charts
+    - DropDown
+    - EGPieChart
+    - KeychainSwift
+    - RxSwift
+    - SwiftAlgorithms
+
+SPEC CHECKSUMS:
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  Charts: ce0768268078eee0336f122c3c4ca248e4e204c5
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  EGPieChart: 75a2414b22335185e7a882340885d9b4243d3b95
+  KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
+
+PODFILE CHECKSUM: 4ec0884b2647f3fe9944995c292900ec6801c621
+
+COCOAPODS: 1.14.3

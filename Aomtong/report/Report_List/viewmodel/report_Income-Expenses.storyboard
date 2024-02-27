@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet-Bold.ttf">
+            <string>SukhumvitSet-Bold</string>
+        </array>
+        <array key="sukhumvitsetmedium.ttc">
+            <string>SukhumvitSet-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Report List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="UIView_ReportListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="UIView_ReportListViewController" customModule="Aomtung" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuM-Ki-E6F">
+                                <rect key="frame" x="0.0" y="61" width="393" height="71"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="as5-HQ-Qk7">
+                                        <rect key="frame" x="34.666666666666657" y="20" width="324" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="324" id="LNf-dg-RSj"/>
+                                            <constraint firstAttribute="height" constant="31" id="aoc-aM-gie"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="วัน"/>
+                                            <segment title="สัปดาห์"/>
+                                            <segment title="เดือน"/>
+                                            <segment title="ปี"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" name="81C8E4"/>
+                                        <connections>
+                                            <action selector="DidChangeSegment:" destination="Y6W-OH-hqX" eventType="valueChanged" id="kd0-et-Ls0"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" name="FFFFFF"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="08E-ee-FgJ"/>
+                                    <constraint firstItem="as5-HQ-Qk7" firstAttribute="centerY" secondItem="uuM-Ki-E6F" secondAttribute="centerY" id="Dcn-NK-YUd"/>
+                                    <constraint firstAttribute="width" constant="393" id="kl4-q2-GaS"/>
+                                    <constraint firstItem="as5-HQ-Qk7" firstAttribute="centerX" secondItem="uuM-Ki-E6F" secondAttribute="centerX" id="xFX-p8-NNF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wO-Dg-Fcd">
+                                <rect key="frame" x="0.0" y="131" width="393" height="687"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmb-2P-kTJ">
+                                        <rect key="frame" x="0.0" y="6" width="393" height="253"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDn-gx-rDc">
+                                                <rect key="frame" x="14" y="142" width="363" height="2"/>
+                                                <color key="backgroundColor" name="E2E2E2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="363" id="IKf-qC-W4w"/>
+                                                    <constraint firstAttribute="height" constant="2" id="gWX-4Z-rme"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ไม่จำเป็น" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6F-CW-dva">
+                                                <rect key="frame" x="14" y="210" width="54" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="54" id="juo-ch-TQN"/>
+                                                    <constraint firstAttribute="height" constant="23" id="k4H-I6-nRn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายจ่าย" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhA-uq-l0u">
+                                                <rect key="frame" x="14" y="152" width="65" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="1P3-cT-hvy"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="b5X-dm-jK1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" name="E85757"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tje-gY-yFF">
+                                                <rect key="frame" x="336" y="117" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="ldf-H5-h8F"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="sJg-yg-qhf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4w-33-Ghd">
+                                                <rect key="frame" x="336" y="184" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="hLp-88-9Sr"/>
+                                                    <constraint firstAttribute="height" constant="23" id="vNn-cY-EJA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQf-Rm-vBS">
+                                                <rect key="frame" x="92" y="22" width="207" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="4So-5P-BMl"/>
+                                                    <constraint firstAttribute="height" constant="21" id="qmU-dQ-tiG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="แน่นอน" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dA-ii-C0i">
+                                                <rect key="frame" x="14" y="91" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="41" id="Hh8-To-4is"/>
+                                                    <constraint firstAttribute="height" constant="23" id="ugd-g6-Tqj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="จำเป็น" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDe-z0-5UX">
+                                                <rect key="frame" x="14" y="184" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="uCC-rt-c22"/>
+                                                    <constraint firstAttribute="width" constant="41" id="ykx-YH-iUF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayG-Kv-oJJ">
+                                                <rect key="frame" x="320" y="59" width="57.333333333333314" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="Qhn-1t-57V"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="jWU-tB-cla"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" name="0589BD"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRf-6C-abU">
+                                                <rect key="frame" x="268" y="152" width="109" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="DSg-XY-q7Q"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="109" id="fRx-po-7g5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" name="E85757"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ไม่แน่นอน" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKJ-1G-TK5">
+                                                <rect key="frame" x="14" y="117" width="54" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="54" id="3kP-sh-t4e"/>
+                                                    <constraint firstAttribute="height" constant="23" id="PgC-Fg-MZY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJj-g2-dbu">
+                                                <rect key="frame" x="336" y="91" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="Qa1-F5-DQX"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="Tzf-iH-NQX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCE-Ca-ZzO">
+                                                <rect key="frame" x="326" y="11" width="68" height="43"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="NHH-XM-K57"/>
+                                                    <constraint firstAttribute="width" constant="68" id="f55-F8-Uh0"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="options"/>
+                                                <connections>
+                                                    <action selector="btn_right:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3WB-C8-mN9"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibo-mt-gTs">
+                                                <rect key="frame" x="336" y="210" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="8qd-yP-YLX"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="c5C-wa-GnS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายรับ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ5-m9-bic">
+                                                <rect key="frame" x="14" y="59" width="55" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="Mf6-UI-RFx"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="u1i-2k-i1e"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" name="0589BD"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5e-mv-XaU">
+                                                <rect key="frame" x="0.0" y="11" width="68" height="43"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="68" id="5lq-YS-9hh"/>
+                                                    <constraint firstAttribute="height" constant="43" id="IW2-r8-Hbr"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                                <connections>
+                                                    <action selector="btn_left:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lHU-kL-FBG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ys-EA-Uiq">
+                                                <rect key="frame" x="76" y="11" width="242" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="gnj-c5-WFW"/>
+                                                    <constraint firstAttribute="width" constant="242" id="wzq-mr-qZc"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="FFFFFF"/>
+                                        <constraints>
+                                            <constraint firstItem="rhA-uq-l0u" firstAttribute="leading" secondItem="Wmb-2P-kTJ" secondAttribute="leading" constant="14" id="0Rh-NN-PaI"/>
+                                            <constraint firstItem="g6F-CW-dva" firstAttribute="leading" secondItem="Wmb-2P-kTJ" secondAttribute="leading" constant="14" id="1h4-Ay-Bcd"/>
+                                            <constraint firstItem="4dA-ii-C0i" firstAttribute="leading" secondItem="Wmb-2P-kTJ" secondAttribute="leading" constant="14" id="260-Dr-lMr"/>
+                                            <constraint firstItem="QDn-gx-rDc" firstAttribute="leading" secondItem="Wmb-2P-kTJ" secondAttribute="leading" constant="14" id="7Zu-eG-ir8"/>
+                                            <constraint firstItem="rhA-uq-l0u" firstAttribute="top" secondItem="QDn-gx-rDc" secondAttribute="bottom" constant="8" symbolic="YES" id="AYX-Qa-e2O"/>
+                                            <constraint firstItem="DCE-Ca-ZzO" firstAttribute="top" secondItem="Wmb-2P-kTJ" secondAttribute="top" constant="11" id="CJG-CY-Qyy"/>
+                                            <constraint firstItem="QDn-gx-rDc" firstAttribute="top" secondItem="FKJ-1G-TK5" secondAttribute="bottom" constant="2" id="CXS-R7-pWb"/>
+                                            <constraint firstItem="FKJ-1G-TK5" firstAttribute="top" secondItem="4dA-ii-C0i" secondAttribute="bottom" constant="3" id="DMM-6s-hoG"/>
+                                            <constraint firstItem="aDe-z0-5UX" firstAttribute="leading" secondItem="Wmb-2P-kTJ" secondAttribute="leading" constant="14" id="FN1-qZ-3Q9"/>
+                                            <constraint firstItem="tje-gY-yFF" firstAttribute="top" secondItem="GJj-g2-dbu" secondAttribute="bottom" constant="3" id="JS0-0X-Pr2"/>
+                                            <constraint firstItem="Ibo-mt-gTs" firstAttribute="top" secondItem="d4w-33-Ghd" secondAttribute="bottom" constant="3" id="Js3-CQ-6Ct"/>
+                                            <constraint firstAttribute="trailing" secondItem="tje-gY-yFF" secondAttribute="trailing" constant="16" id="K3j-eR-jBf"/>
+                                            <constraint firstAttribute="trailing" secondItem="GJj-g2-dbu" secondAttribute="trailing" constant="16" id="KeC-3D-hyx"/>
+                                            <constraint firstItem="R5e-mv-XaU" firstAttribute="top" secondItem="Wmb-2P-kTJ" secondAttribute="top" constant="11" id="L7y-z7-1Iz"/>
+                                            <constraint firstAttribute="trailing" secondItem="ayG-Kv-oJJ" secondAttribute="trailing" constant="15.666666666666686" id="MfQ-Xl-MfB"/>
+                                            <constraint firstItem="iQf-Rm-vBS" firstAttribute="centerX" secondItem="Wmb-2P-kTJ" secondAttribute="centerX" constant="-1" id="NPX-qi-NnS"/>
+                                            <constraint firstItem="ayG-Kv-oJJ" firstAttribute="top" secondItem="DCE-Ca-ZzO" secondAttribute="bottom" constant="5" id="PE1-Dm-G5Z"/>
+                                            <constraint firstAttribute="trailing" secondItem="dRf-6C-abU" secondAttribute="trailing" constant="16" id="PVU-BY-DeB"/>
+                                            <constraint firstItem="iQf-Rm-vBS" firstAttribute="top" secondItem="Wmb-2P-kTJ" secondAttribute="top" constant="22" id="QU3-0r-C2d"/>
+                                            <constraint firstItem="g6F-CW-dva" firstAttribute="top" secondItem="aDe-z0-5UX" secondAttribute="bottom" constant="3" id="Rwp-ge-BEC"/>
+                                            <constraint firstItem="dRf-6C-abU" firstAttribute="top" secondItem="QDn-gx-rDc" secondAttribute="bottom" constant="8" symbolic="YES" id="Wy3-Wx-5fC"/>
+                                            <constraint firstItem="0ys-EA-Uiq" firstAttribute="leading" secondItem="R5e-mv-XaU" secondAttribute="trailing" constant="8" symbolic="YES" id="ckx-8f-Xpl"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ibo-mt-gTs" secondAttribute="trailing" constant="16" id="hrQ-CT-DAX"/>
+                                            <constraint firstItem="d4w-33-Ghd" firstAttribute="top" secondItem="dRf-6C-abU" secondAttribute="bottom" id="jOT-mv-7bE"/>
+                                            <constraint firstItem="0ys-EA-Uiq" firstAttribute="top" secondItem="Wmb-2P-kTJ" secondAttribute="top" constant="11" id="miS-n9-Y6J"/>
+                                            <constraint firstAttribute="height" constant="253" id="oXL-G8-NuM"/>
+                                            <constraint firstItem="R5e-mv-XaU" firstAttribute="leading" secondItem="Wmb-2P-kTJ" secondAttribute="leading" id="r7Q-Tn-oh9"/>
+                                            <constraint firstAttribute="trailing" secondItem="d4w-33-Ghd" secondAttribute="trailing" constant="16" id="rGK-wr-w24"/>
+                                            <constraint firstAttribute="width" constant="393" id="rVK-Gq-4ox"/>
+                                            <constraint firstItem="GJj-g2-dbu" firstAttribute="top" secondItem="ayG-Kv-oJJ" secondAttribute="bottom" id="tNa-vu-UPQ"/>
+                                            <constraint firstItem="RZ5-m9-bic" firstAttribute="top" secondItem="R5e-mv-XaU" secondAttribute="bottom" constant="5" id="tuO-OP-iHg"/>
+                                            <constraint firstItem="DCE-Ca-ZzO" firstAttribute="leading" secondItem="0ys-EA-Uiq" secondAttribute="trailing" constant="8" symbolic="YES" id="vml-j5-CGE"/>
+                                            <constraint firstAttribute="trailing" secondItem="QDn-gx-rDc" secondAttribute="trailing" constant="16" id="w1d-Dz-fFB"/>
+                                            <constraint firstItem="4dA-ii-C0i" firstAttribute="top" secondItem="RZ5-m9-bic" secondAttribute="bottom" id="yPm-50-XDt"/>
+                                            <constraint firstItem="aDe-z0-5UX" firstAttribute="top" secondItem="rhA-uq-l0u" secondAttribute="bottom" id="yj2-Bv-nuK"/>
+                                            <constraint firstItem="RZ5-m9-bic" firstAttribute="leading" secondItem="Wmb-2P-kTJ" secondAttribute="leading" constant="14" id="yks-uw-Dxm"/>
+                                            <constraint firstAttribute="trailing" secondItem="DCE-Ca-ZzO" secondAttribute="trailing" constant="-1" id="z0a-UM-35J"/>
+                                            <constraint firstItem="FKJ-1G-TK5" firstAttribute="leading" secondItem="Wmb-2P-kTJ" secondAttribute="leading" constant="14" id="zbX-1v-AA1"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqm-7k-az9">
+                                        <rect key="frame" x="0.0" y="267" width="393" height="43"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4t-NF-y43">
+                                                <rect key="frame" x="24" y="11" width="55" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="LGL-dJ-qwp"/>
+                                                    <constraint firstAttribute="height" constant="21" id="qzR-Kw-tUZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="13"/>
+                                                <color key="textColor" name="B0ADAD"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="FFFFFF"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="9mm-rV-evr"/>
+                                            <constraint firstItem="y4t-NF-y43" firstAttribute="leading" secondItem="Xqm-7k-az9" secondAttribute="leading" constant="24" id="INi-AF-EFd"/>
+                                            <constraint firstAttribute="bottom" secondItem="y4t-NF-y43" secondAttribute="bottom" constant="11" id="VYp-vl-9Pu"/>
+                                            <constraint firstItem="y4t-NF-y43" firstAttribute="top" secondItem="Xqm-7k-az9" secondAttribute="top" constant="11" id="Z8U-ax-46V"/>
+                                            <constraint firstAttribute="width" constant="393" id="rDV-Jt-6zj"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A8q-Es-xFu">
+                                        <rect key="frame" x="0.0" y="310" width="393" height="415"/>
+                                        <color key="backgroundColor" name="FFFFFF"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="415" id="7Xh-rG-EuP"/>
+                                            <constraint firstAttribute="width" constant="393" id="fFV-i6-JtR"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" name="F4F4F4"/>
+                                <constraints>
+                                    <constraint firstItem="Xqm-7k-az9" firstAttribute="leading" secondItem="6wO-Dg-Fcd" secondAttribute="leading" id="EVz-h5-8Zn"/>
+                                    <constraint firstAttribute="width" constant="393" id="FHK-b2-ib0"/>
+                                    <constraint firstItem="Wmb-2P-kTJ" firstAttribute="leading" secondItem="6wO-Dg-Fcd" secondAttribute="leading" id="Jae-AA-W1r"/>
+                                    <constraint firstItem="Wmb-2P-kTJ" firstAttribute="top" secondItem="6wO-Dg-Fcd" secondAttribute="top" constant="6" id="LDF-1I-cmM"/>
+                                    <constraint firstItem="A8q-Es-xFu" firstAttribute="top" secondItem="Xqm-7k-az9" secondAttribute="bottom" id="YaZ-uy-rTg"/>
+                                    <constraint firstAttribute="height" constant="687" id="Zb5-B3-ee2"/>
+                                    <constraint firstAttribute="trailing" secondItem="A8q-Es-xFu" secondAttribute="trailing" id="iaV-CA-9M0"/>
+                                    <constraint firstItem="Xqm-7k-az9" firstAttribute="top" secondItem="Wmb-2P-kTJ" secondAttribute="bottom" constant="8" symbolic="YES" id="j5b-Wr-nz0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wmb-2P-kTJ" secondAttribute="trailing" id="lSG-Kv-qOX"/>
+                                    <constraint firstItem="A8q-Es-xFu" firstAttribute="leading" secondItem="6wO-Dg-Fcd" secondAttribute="leading" id="pxq-GY-bBq"/>
+                                    <constraint firstAttribute="bottom" secondItem="A8q-Es-xFu" secondAttribute="bottom" constant="-38" id="shF-J7-YcB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xqm-7k-az9" secondAttribute="trailing" id="v1m-l7-Prn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="FFFFFF"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uuM-Ki-E6F" secondAttribute="trailing" id="4m2-FY-cAG"/>
+                            <constraint firstItem="6wO-Dg-Fcd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4na-jN-dpf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6wO-Dg-Fcd" secondAttribute="trailing" id="GHi-eA-REU"/>
+                            <constraint firstItem="uuM-Ki-E6F" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="2" id="Iki-l2-Kos"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6wO-Dg-Fcd" secondAttribute="bottom" id="sQa-AG-aDt"/>
+                            <constraint firstItem="uuM-Ki-E6F" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uMQ-Zc-yUo"/>
+                            <constraint firstItem="6wO-Dg-Fcd" firstAttribute="top" secondItem="uuM-Ki-E6F" secondAttribute="bottom" constant="-1" id="wX2-J0-hBC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="DropDown" destination="0ys-EA-Uiq" id="hpZ-RV-jRF"/>
+                        <outlet property="LB_DatetimeTable" destination="y4t-NF-y43" id="qej-wO-XoF"/>
+                        <outlet property="Segment" destination="as5-HQ-Qk7" id="RV6-Uw-BYA"/>
+                        <outlet property="lb_NecessaryExpenses" destination="d4w-33-Ghd" id="nYc-ja-ICm"/>
+                        <outlet property="lb_StableIncome" destination="GJj-g2-dbu" id="Vfq-Iq-vdk"/>
+                        <outlet property="lb_UnNecessaryExpenses" destination="Ibo-mt-gTs" id="DWr-vc-jih"/>
+                        <outlet property="lb_UnStableIncome" destination="tje-gY-yFF" id="MXh-kP-g7k"/>
+                        <outlet property="lb_showDate" destination="iQf-Rm-vBS" id="vw9-bV-Yl1"/>
+                        <outlet property="lb_totalExpenses" destination="dRf-6C-abU" id="LYw-5i-aFn"/>
+                        <outlet property="lb_totalIncome" destination="ayG-Kv-oJJ" id="44L-Ag-9pQ"/>
+                        <outlet property="table_Report" destination="A8q-Es-xFu" id="oO3-mJ-rxe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.946564885496173" y="3.5211267605633805"/>
+        </scene>
+        <!--To Tal Summarize View Controller-->
+        <scene sceneID="4vd-8I-ZSD">
+            <objects>
+                <viewController storyboardIdentifier="ToTalSummarize_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6OH-Dx-7TT" customClass="ToTalSummarize_ViewController" customModule="Aomtung" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yl9-Ps-rco">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7q-j0-FtP">
+                                <rect key="frame" x="0.0" y="61" width="393" height="757"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0G-tV-ax1">
+                                        <rect key="frame" x="0.0" y="475" width="393" height="194"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9du-Ji-aQM">
+                                                <rect key="frame" x="15" y="91" width="363" height="2"/>
+                                                <color key="backgroundColor" name="E2E2E2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="363" id="ecn-ja-We7"/>
+                                                    <constraint firstAttribute="height" constant="2" id="fPj-yv-754"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ไม่จำเป็น" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MU-YJ-hcP">
+                                                <rect key="frame" x="15" y="159" width="54" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="6kn-4P-due"/>
+                                                    <constraint firstAttribute="width" constant="54" id="uvs-In-Sgu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายจ่าย" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD6-rT-h3x">
+                                                <rect key="frame" x="15" y="101" width="65" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="duS-xF-6WQ"/>
+                                                    <constraint firstAttribute="height" constant="32" id="yDW-j0-G3f"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" name="E85757"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTK-j6-iDq">
+                                                <rect key="frame" x="337" y="66" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="DhK-73-A9V"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="UN9-zK-u6l"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqx-RD-qpD">
+                                                <rect key="frame" x="337" y="133" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="c5g-In-AXL"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="tcd-3l-z4p"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="แน่นอน" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xs-OA-06w">
+                                                <rect key="frame" x="15" y="40" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="LaQ-B8-QbN"/>
+                                                    <constraint firstAttribute="width" constant="41" id="XiO-3F-gUu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="จำเป็น" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVO-Ho-I0h">
+                                                <rect key="frame" x="15" y="133" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="Pnr-aO-FBB"/>
+                                                    <constraint firstAttribute="width" constant="41" id="xqo-It-mSG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPH-71-aEy">
+                                                <rect key="frame" x="321" y="8" width="57.333333333333314" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="ZoX-8O-ae4"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="xca-2B-RCa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" name="0589BD"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuu-EL-YCZ">
+                                                <rect key="frame" x="269" y="101" width="109" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="109" id="bWd-dj-TmQ"/>
+                                                    <constraint firstAttribute="height" constant="32" id="uSe-gd-uVv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" name="E85757"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ไม่แน่นอน" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gV-Da-xjo">
+                                                <rect key="frame" x="15" y="66" width="54" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="54" id="CVY-O1-hWD"/>
+                                                    <constraint firstAttribute="height" constant="23" id="vRX-Xl-VUg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKh-aM-20C">
+                                                <rect key="frame" x="337" y="40" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="5i3-8u-e3p"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="Nm6-yy-lVO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ฿" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sc-nX-PgF">
+                                                <rect key="frame" x="337" y="159" width="41" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="dAz-oB-idt"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="zJq-K4-iDP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="14"/>
+                                                <color key="textColor" name="373D45"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายรับ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFj-Mu-flK">
+                                                <rect key="frame" x="15" y="8" width="55" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="IIT-Ug-nVg"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="LFq-J2-UY0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" name="0589BD"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="FFFFFF"/>
+                                        <constraints>
+                                            <constraint firstItem="wKh-aM-20C" firstAttribute="top" secondItem="LPH-71-aEy" secondAttribute="bottom" id="0nn-CA-8sI"/>
+                                            <constraint firstAttribute="width" constant="393" id="2QK-qO-Cty"/>
+                                            <constraint firstItem="2Xs-OA-06w" firstAttribute="top" secondItem="gFj-Mu-flK" secondAttribute="bottom" id="2q4-EV-XyS"/>
+                                            <constraint firstItem="Gqx-RD-qpD" firstAttribute="top" secondItem="wuu-EL-YCZ" secondAttribute="bottom" id="9fO-Ve-tuk"/>
+                                            <constraint firstItem="3MU-YJ-hcP" firstAttribute="leading" secondItem="B0G-tV-ax1" secondAttribute="leading" constant="15" id="B0a-wI-UO0"/>
+                                            <constraint firstItem="3MU-YJ-hcP" firstAttribute="top" secondItem="cVO-Ho-I0h" secondAttribute="bottom" constant="3" id="Cyp-XT-GUb"/>
+                                            <constraint firstAttribute="trailing" secondItem="1sc-nX-PgF" secondAttribute="trailing" constant="15" id="Gkc-Ok-gBD"/>
+                                            <constraint firstItem="9du-Ji-aQM" firstAttribute="leading" secondItem="B0G-tV-ax1" secondAttribute="leading" constant="15" id="IhL-kr-gfu"/>
+                                            <constraint firstAttribute="trailing" secondItem="LPH-71-aEy" secondAttribute="trailing" constant="14.666666666666686" id="LJg-1H-g2f"/>
+                                            <constraint firstItem="2Xs-OA-06w" firstAttribute="leading" secondItem="B0G-tV-ax1" secondAttribute="leading" constant="15" id="Mna-yP-ey2"/>
+                                            <constraint firstItem="9du-Ji-aQM" firstAttribute="top" secondItem="6gV-Da-xjo" secondAttribute="bottom" constant="2" id="No9-IY-Y2L"/>
+                                            <constraint firstAttribute="trailing" secondItem="wKh-aM-20C" secondAttribute="trailing" constant="15" id="OK9-ex-gW0"/>
+                                            <constraint firstItem="LPH-71-aEy" firstAttribute="top" secondItem="B0G-tV-ax1" secondAttribute="top" constant="8" id="Ok8-l5-Cbw"/>
+                                            <constraint firstAttribute="trailing" secondItem="XTK-j6-iDq" secondAttribute="trailing" constant="15" id="Wdd-JB-Eco"/>
+                                            <constraint firstAttribute="trailing" secondItem="9du-Ji-aQM" secondAttribute="trailing" constant="15" id="XCE-qV-Shn"/>
+                                            <constraint firstItem="6gV-Da-xjo" firstAttribute="top" secondItem="2Xs-OA-06w" secondAttribute="bottom" constant="3" id="Xe8-dQ-XKn"/>
+                                            <constraint firstAttribute="height" constant="194" id="Xuq-Ua-Knj"/>
+                                            <constraint firstItem="DD6-rT-h3x" firstAttribute="leading" secondItem="B0G-tV-ax1" secondAttribute="leading" constant="15" id="ZTp-qb-GMU"/>
+                                            <constraint firstItem="DD6-rT-h3x" firstAttribute="top" secondItem="9du-Ji-aQM" secondAttribute="bottom" constant="8" symbolic="YES" id="cjJ-b3-pRX"/>
+                                            <constraint firstItem="wuu-EL-YCZ" firstAttribute="top" secondItem="9du-Ji-aQM" secondAttribute="bottom" constant="8" symbolic="YES" id="ejN-2W-T4C"/>
+                                            <constraint firstItem="cVO-Ho-I0h" firstAttribute="leading" secondItem="B0G-tV-ax1" secondAttribute="leading" constant="15" id="fj0-hl-tz5"/>
+                                            <constraint firstItem="gFj-Mu-flK" firstAttribute="leading" secondItem="B0G-tV-ax1" secondAttribute="leading" constant="15" id="fpL-T2-pPP"/>
+                                            <constraint firstItem="cVO-Ho-I0h" firstAttribute="top" secondItem="DD6-rT-h3x" secondAttribute="bottom" id="jxa-1q-Dod"/>
+                                            <constraint firstItem="gFj-Mu-flK" firstAttribute="top" secondItem="B0G-tV-ax1" secondAttribute="top" constant="8" id="lIq-Rq-LOH"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gqx-RD-qpD" secondAttribute="trailing" constant="15" id="tSe-fE-eqI"/>
+                                            <constraint firstAttribute="trailing" secondItem="wuu-EL-YCZ" secondAttribute="trailing" constant="15" id="tfd-sW-zno"/>
+                                            <constraint firstItem="1sc-nX-PgF" firstAttribute="top" secondItem="Gqx-RD-qpD" secondAttribute="bottom" constant="3" id="vM6-4r-7kh"/>
+                                            <constraint firstItem="XTK-j6-iDq" firstAttribute="top" secondItem="wKh-aM-20C" secondAttribute="bottom" constant="3" id="wxs-Kb-fdh"/>
+                                            <constraint firstItem="6gV-Da-xjo" firstAttribute="leading" secondItem="B0G-tV-ax1" secondAttribute="leading" constant="15" id="zY7-gm-lnY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="F4F4F4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="757" id="9uC-Jn-UTe"/>
+                                    <constraint firstItem="B0G-tV-ax1" firstAttribute="leading" secondItem="F7q-j0-FtP" secondAttribute="leading" id="SXv-39-JsU"/>
+                                    <constraint firstAttribute="trailing" secondItem="B0G-tV-ax1" secondAttribute="trailing" id="XuD-Qo-UK1"/>
+                                    <constraint firstAttribute="width" constant="393" id="knG-LL-Coh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-FH-X74">
+                                <rect key="frame" x="0.0" y="61" width="393" height="465"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOP-Wl-j76">
+                                        <rect key="frame" x="0.0" y="71" width="68" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68" id="N6j-SO-RTz"/>
+                                            <constraint firstAttribute="height" constant="43" id="ogE-Ig-QiC"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                        <connections>
+                                            <action selector="leftTapAction:" destination="6OH-Dx-7TT" eventType="touchUpInside" id="651-Lm-ZBI"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="2dn-SC-7Nw">
+                                        <rect key="frame" x="93" y="82" width="207" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="IzA-R6-QVn"/>
+                                            <constraint firstAttribute="height" constant="21" id="jFB-ee-3nv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="16"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Cda-z0-RC9">
+                                        <rect key="frame" x="34.666666666666657" y="20" width="324" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="LqJ-tV-9P1"/>
+                                            <constraint firstAttribute="width" constant="324" id="Zff-XE-Lru"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="วัน"/>
+                                            <segment title="สัปดาห์"/>
+                                            <segment title="เดือน"/>
+                                            <segment title="ปี"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" name="FF8686"/>
+                                        <connections>
+                                            <action selector="didchangesegment:" destination="6OH-Dx-7TT" eventType="valueChanged" id="2bM-MY-Q4W"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQ0-dx-ouf">
+                                        <rect key="frame" x="325" y="71" width="68" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="UT6-sT-2BK"/>
+                                            <constraint firstAttribute="width" constant="68" id="VSi-LV-sFV"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="options"/>
+                                        <connections>
+                                            <action selector="rightTapAction:" destination="6OH-Dx-7TT" eventType="touchUpInside" id="6nY-EW-UNx"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rY8-Dt-gMY">
+                                        <rect key="frame" x="8" y="129" width="377" height="328"/>
+                                        <color key="backgroundColor" name="FFFFFF"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="377" id="6Yh-ne-HCf"/>
+                                            <constraint firstAttribute="height" constant="328" id="l9a-Hs-ACQ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz9-ek-7lg">
+                                        <rect key="frame" x="76" y="72" width="241" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="241" id="30s-xP-Gjj"/>
+                                            <constraint firstAttribute="height" constant="41" id="iFv-Dy-vjG"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="FFFFFF"/>
+                                <constraints>
+                                    <constraint firstItem="Cda-z0-RC9" firstAttribute="centerX" secondItem="6C1-FH-X74" secondAttribute="centerX" id="33S-bh-9dt"/>
+                                    <constraint firstItem="kOP-Wl-j76" firstAttribute="top" secondItem="Cda-z0-RC9" secondAttribute="bottom" constant="20" id="6dV-LE-zwB"/>
+                                    <constraint firstItem="rY8-Dt-gMY" firstAttribute="top" secondItem="6C1-FH-X74" secondAttribute="top" constant="129" id="9XV-Aa-itW"/>
+                                    <constraint firstAttribute="trailing" secondItem="qQ0-dx-ouf" secondAttribute="trailing" id="D9v-oU-WHn"/>
+                                    <constraint firstItem="2dn-SC-7Nw" firstAttribute="centerX" secondItem="6C1-FH-X74" secondAttribute="centerX" id="LMU-Ce-zpv"/>
+                                    <constraint firstAttribute="width" constant="393" id="O8f-VC-EQU"/>
+                                    <constraint firstItem="Bz9-ek-7lg" firstAttribute="leading" secondItem="kOP-Wl-j76" secondAttribute="trailing" constant="8" symbolic="YES" id="OBy-nj-bLq"/>
+                                    <constraint firstAttribute="bottom" secondItem="rY8-Dt-gMY" secondAttribute="bottom" constant="8" id="TZc-p6-zbn"/>
+                                    <constraint firstItem="Cda-z0-RC9" firstAttribute="centerY" secondItem="6C1-FH-X74" secondAttribute="centerY" constant="-197" id="UGw-J8-MLr"/>
+                                    <constraint firstItem="kOP-Wl-j76" firstAttribute="leading" secondItem="6C1-FH-X74" secondAttribute="leading" id="bBG-xm-kou"/>
+                                    <constraint firstItem="Bz9-ek-7lg" firstAttribute="top" secondItem="Cda-z0-RC9" secondAttribute="bottom" constant="21" id="fI8-LQ-g0n"/>
+                                    <constraint firstItem="qQ0-dx-ouf" firstAttribute="top" secondItem="Cda-z0-RC9" secondAttribute="bottom" constant="20" id="h2U-Kw-xzb"/>
+                                    <constraint firstItem="2dn-SC-7Nw" firstAttribute="top" secondItem="Cda-z0-RC9" secondAttribute="bottom" constant="31" id="jTC-T7-bRD"/>
+                                    <constraint firstItem="qQ0-dx-ouf" firstAttribute="leading" secondItem="Bz9-ek-7lg" secondAttribute="trailing" constant="8" symbolic="YES" id="t1U-6k-Wwi"/>
+                                    <constraint firstAttribute="height" constant="465" id="vmO-MZ-Kdw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R7F-xf-dcO"/>
+                        <color key="backgroundColor" name="FFFFFF"/>
+                        <constraints>
+                            <constraint firstItem="F7q-j0-FtP" firstAttribute="leading" secondItem="R7F-xf-dcO" secondAttribute="leading" id="OYc-5D-Qab"/>
+                            <constraint firstItem="B0G-tV-ax1" firstAttribute="top" secondItem="6C1-FH-X74" secondAttribute="bottom" constant="10" id="SCz-4X-Irz"/>
+                            <constraint firstItem="R7F-xf-dcO" firstAttribute="bottom" secondItem="F7q-j0-FtP" secondAttribute="bottom" id="U9b-6B-2Nr"/>
+                            <constraint firstItem="rY8-Dt-gMY" firstAttribute="centerX" secondItem="R7F-xf-dcO" secondAttribute="centerX" id="V4K-nO-Nc6"/>
+                            <constraint firstItem="F7q-j0-FtP" firstAttribute="top" secondItem="R7F-xf-dcO" secondAttribute="top" constant="2" id="hsC-qq-0Og"/>
+                            <constraint firstItem="6C1-FH-X74" firstAttribute="leading" secondItem="R7F-xf-dcO" secondAttribute="leading" id="jIx-kC-bpC"/>
+                            <constraint firstItem="6C1-FH-X74" firstAttribute="top" secondItem="R7F-xf-dcO" secondAttribute="top" constant="2" id="pga-s7-OCS"/>
+                            <constraint firstItem="R7F-xf-dcO" firstAttribute="trailing" secondItem="F7q-j0-FtP" secondAttribute="trailing" id="qRk-5y-f9d"/>
+                            <constraint firstItem="R7F-xf-dcO" firstAttribute="trailing" secondItem="6C1-FH-X74" secondAttribute="trailing" id="ygS-GV-5aR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Dropdown" destination="Bz9-ek-7lg" id="Hzl-7g-5N7"/>
+                        <outlet property="MainView" destination="F7q-j0-FtP" id="TFO-ap-ipU"/>
+                        <outlet property="Segment" destination="Cda-z0-RC9" id="5mu-3v-1Qj"/>
+                        <outlet property="View_Chart" destination="rY8-Dt-gMY" id="X4f-vi-WzV"/>
+                        <outlet property="btn_Left" destination="kOP-Wl-j76" id="6Wz-UV-JlR"/>
+                        <outlet property="btn_Right" destination="qQ0-dx-ouf" id="c3H-7S-gkq"/>
+                        <outlet property="lb_Date" destination="2dn-SC-7Nw" id="eNJ-Nd-CxG"/>
+                        <outlet property="lb_ExpensesTotal" destination="wuu-EL-YCZ" id="5ip-xH-I5j"/>
+                        <outlet property="lb_IncomeTotal" destination="LPH-71-aEy" id="AsP-DI-cH5"/>
+                        <outlet property="lb_NecessaryExpenses" destination="Gqx-RD-qpD" id="ZD8-3B-Zvb"/>
+                        <outlet property="lb_StableIncome" destination="wKh-aM-20C" id="hP7-6U-WFI"/>
+                        <outlet property="lb_UnNecessaryExpenses" destination="1sc-nX-PgF" id="7RU-UN-qrk"/>
+                        <outlet property="lb_UnStableIncome" destination="XTK-j6-iDq" id="TGv-yN-bCJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UdS-lb-BXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739.69465648854964" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back_icon" width="25" height="24"/>
+        <image name="options" width="24" height="24"/>
+        <namedColor name="0589BD">
+            <color red="0.019999999552965164" green="0.53700000047683716" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="373D45">
+            <color red="0.21600000560283661" green="0.23899999260902405" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="81C8E4">
+            <color red="0.50599998235702515" green="0.7839999794960022" blue="0.89399999380111694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="B0ADAD">
+            <color red="0.68999999761581421" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="E2E2E2">
+            <color red="0.88599997758865356" green="0.88599997758865356" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="E85757">
+            <color red="0.9100000262260437" green="0.34099999070167542" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="F4F4F4">
+            <color red="0.9570000171661377" green="0.9570000171661377" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FF8686">
+            <color red="1" green="0.52499997615814209" blue="0.52499997615814209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

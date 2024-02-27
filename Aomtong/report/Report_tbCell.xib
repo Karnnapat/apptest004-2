@@ -101,7 +101,7 @@
                             <action selector="btn_dropdown:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2bN-Tb-Ece"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ยังไม่มีข้อมูล" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-Sa-mGe">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ยังไม่มีข้อมูล" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-Sa-mGe">
                         <rect key="frame" x="83" y="330" width="195" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="195" id="HTc-mi-5L8"/>

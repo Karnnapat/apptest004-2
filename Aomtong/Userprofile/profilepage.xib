@@ -55,7 +55,7 @@
                         <rect key="frame" x="79" y="33" width="238" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="7Oz-4p-QBf"/>
-                            <constraint firstAttribute="width" constant="238" id="Jum-9K-eIC"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="238" id="Jum-9K-eIC"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="20"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

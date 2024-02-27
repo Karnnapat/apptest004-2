@@ -18,12 +18,18 @@ class Calculator: UIViewController {
     var sum : [String] = [""]
     
     var addState : AddstateType?
+    var resultState : ResultstateType?
     var actionAddCalHandler : ((Double) -> Void)?
 
     
     public enum AddstateType {
         case income
         case expenses
+        case accept
+    }
+    public enum ResultstateType {
+        case accept
+        case equal
     }
 
 
@@ -31,8 +37,14 @@ class Calculator: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if result <= 0.001 {
+            result = 0.00
+        }
+        calulatorDisplay.text = String(result)
+        userInput = calulatorDisplay.text ?? ""
+        result = 0.00
         
+            
     }
     
     @IBOutlet weak var calulatorDisplay: UILabel!
@@ -136,6 +148,10 @@ class Calculator: UIViewController {
     }
     
     @IBAction func equalbutton(_ sender: Any) {
+        resultState = .equal
+        Equal()
+    }
+    func Equal(){
         second = userInput
         var firstinput = 0.00
         var secondinput = 0.00
@@ -157,25 +173,44 @@ class Calculator: UIViewController {
             function = ""
             break
         case "*":
-            result = firstinput * secondinput 
+            result = firstinput * secondinput
             userInput = ""
             function = ""
             break
         case "/":
-            result = firstinput / secondinput  
+            result = firstinput / secondinput
             userInput = ""
             function = ""
             break
         default:
-            result = doubleuserInput
+            switch resultState {
+            case .accept:
+                if result == 0 {
+                    calulatorDisplay.text = "0.00"
+                    let recheckreult = Double(calulatorDisplay.text ?? "0.00")
+                    result = recheckreult ?? 0.00
+                }
+                result = doubleuserInput
+            case .equal:
+                if result == 0 {
+                    calulatorDisplay.text = "0.00"
+                    let recheckreult = Double(calulatorDisplay.text ?? "0.00")
+                    result = recheckreult ?? 0.00
+                }
+                break
+            default:
+                break
+            }
             break
         }
-
+        
         calulatorDisplay.text = String(result)
+        if calulatorDisplay.text == "0.00" || calulatorDisplay.text == "0.0" {
+            calulatorDisplay.text = "0.00"
+        }
         print("result from equal  \(result)\n")
         print("userInput from equal \(userInput)\n")
         print("first from equal \(first)\n")
-
     }
     @IBAction func decimalbutton(_ sender: Any) {
           
@@ -257,6 +292,9 @@ class Calculator: UIViewController {
         }else if first != ""{
             first.removeLast()
             calulatorDisplay.text = first
+        }else if calulatorDisplay.text != "" && calulatorDisplay.text != "0.0"{
+            userInput.removeLast()
+            calulatorDisplay.text = userInput
         }
         print("userInput  \(userInput)\n")
         print("first  \(first)")
@@ -265,64 +303,127 @@ class Calculator: UIViewController {
     
     @IBAction func btn_acceptincome(_ sender: Any) {
         
-        
         switch addState {
         case .income:
+            if resultState == .equal{
+                resultState = .equal
+            }else{
+                resultState = .accept
+            }
+            Equal()
             //            let storyborad = UIStoryboard(name: "Main", bundle: nil)
             //            let vc = storyborad.instantiateViewController(identifier: "AddincomeViewController") as! AddincomeViewController
         if result > 0 {
-            if result != 0 {
-                actionAddCalHandler?(result)
+            if result > 0 {
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumFractionDigits = 2
+                numberFormatter.maximumFractionDigits = 2
+                let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                let doubleresult = Double(formattedValue!)
+                actionAddCalHandler?(doubleresult ?? 0.00)
                 //                vc.CalculatorAddincome = result
             }else{
                 if userInput != "" {
                     result = Double(userInput) ?? 0
-                    actionAddCalHandler?(result)
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                 }else{
                     result = Double(first) ?? 0
-                    actionAddCalHandler?(result)
+                    
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                 }
             }
         }else{
             if userInput != "" {
                 result = Double(userInput) ?? 0
-                actionAddCalHandler?(result)
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumFractionDigits = 2
+                numberFormatter.maximumFractionDigits = 2
+                let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                let doubleresult = Double(formattedValue!)
+                actionAddCalHandler?(doubleresult ?? 0.00)
             }else{
                 result = Double(first) ?? 0
-                actionAddCalHandler?(result)
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumFractionDigits = 2
+                numberFormatter.maximumFractionDigits = 2
+                let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                let doubleresult = Double(formattedValue!)
+                actionAddCalHandler?(doubleresult ?? 0.00)
             }
         }
             self.navigationController?.popViewController(animated: true)
 //            self.navigationController?.pushViewController(vc, animated: true)
         case .expenses:
+            if resultState == .equal{
+                resultState = .equal
+            }else{
+                resultState = .accept
+            }
+            Equal()
 //            let storyborad = UIStoryboard(name: "Main", bundle: nil)
 //            let vc = storyborad.instantiateViewController(identifier: "AddincomeViewController") as! AddincomeViewController
             if result > 0 {
                 if result != 0 {
-                    actionAddCalHandler?(result)
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                     //                vc.CalculatorAddexpen = result
                 }else{
                     if userInput != ""   {
                         result = Double(userInput) ?? 0
-                        actionAddCalHandler?(result)
+                        let numberFormatter = NumberFormatter()
+                        numberFormatter.minimumFractionDigits = 2
+                        numberFormatter.maximumFractionDigits = 2
+                        let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                        let doubleresult = Double(formattedValue!)
+                        actionAddCalHandler?(doubleresult ?? 0.00)
                     }else{
                         result = Double(first) ?? 0
-                        actionAddCalHandler?(result)
+                        let numberFormatter = NumberFormatter()
+                        numberFormatter.minimumFractionDigits = 2
+                        numberFormatter.maximumFractionDigits = 2
+                        let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                        let doubleresult = Double(formattedValue!)
+                        actionAddCalHandler?(doubleresult ?? 0.00)
                     }
                 }
             }else{
                 if userInput != "" {
                     result = Double(userInput) ?? 0
-                    actionAddCalHandler?(result)
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                 }else{
                     result = Double(first) ?? 0
-                    actionAddCalHandler?(result)
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.minimumFractionDigits = 2
+                    numberFormatter.maximumFractionDigits = 2
+                    let formattedValue = numberFormatter.string(from: NSNumber(value: result))
+                    let doubleresult = Double(formattedValue!)
+                    actionAddCalHandler?(doubleresult ?? 0.00)
                 }
             }
             self.navigationController?.popViewController(animated: true)
 
 //            self.navigationController?.pushViewController(vc, animated: true)
         default:
+            
             let alert = UIAlertController(title: "เกิดข้อผิดพลาด", message: "กรุณาลองใหม่อีกครั้ง", preferredStyle: .alert)
             let acceptAction = UIAlertAction(title: "ตกลง", style: .default) { (action) in
                 self.dismiss(animated: true)

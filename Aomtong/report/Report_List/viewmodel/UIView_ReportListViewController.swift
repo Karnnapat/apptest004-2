@@ -58,6 +58,11 @@ class UIView_ReportListViewController: UIViewController, UITableViewDelegate, UI
         setupSegment()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        ReportSumarizeData()
+        ReportlistSumarizeData()
+    }
+    
     func inittableview(){
         if table_Report.delegate == nil{
             table_Report.delegate = self
@@ -101,7 +106,7 @@ class UIView_ReportListViewController: UIViewController, UITableViewDelegate, UI
             break
         }
         let time = Int((self.reportSulistmDataRes.first?.report_List_ALL[indexPath.item].timestamp)!)
-        cell.lb_time.text = convertUnixTimestampToDateString(timestamp: TimeInterval(time))
+        cell.lb_time.text = DateConverter.convertUnixTimestampToDateString(timestamp: TimeInterval(time))
         cell.lb_AccountType.text = self.reportSulistmDataRes.first?.report_List_ALL[indexPath.item].type_name
         cell.lb_DataType.text = self.reportSulistmDataRes.first?.report_List_ALL[indexPath.item].category_name
         return cell
@@ -206,7 +211,7 @@ class UIView_ReportListViewController: UIViewController, UITableViewDelegate, UI
                 if let userInfo = self.appdelegate?.loadUserInfo() {
                     ReportSumarizemodel.idmember = userInfo.idmember
                 }
-                LB_DatetimeTable.text = dateFormatter.string(from: startdate)
+                LB_DatetimeTable.text = DateConverter.convertDatetoDayString(date: startdate)
                 ReportSumarizeData()
                 print("Unix timestamp เริ่มต้นของเดือน (หลังการแปลง): \(Int(startDate))")
                 print("Unix timestamp สุดท้ายของเดือน (หลังการแปลง): \(Int(endDate))")

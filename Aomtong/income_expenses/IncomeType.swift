@@ -59,6 +59,7 @@ class IncomeType: UIViewController, UITableViewDataSource, UITableViewDelegate {
 //        }
 
         actionHandler?(getIncometype[indexPath.row])
+        
         self.dismiss(animated: true)
         
     }

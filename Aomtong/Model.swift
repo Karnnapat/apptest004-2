@@ -272,8 +272,8 @@ struct SubGetReportRes : Codable {
     var totalIncome   : String? = ""
     var totalExpenses   : String? = ""
     var totalBalance   : String? = ""
-    var report_month_list_income   : [InSubGetReportincomeRes]?
-    var report_month_list_Expenses   : [InSubGetReportExpensesRes]?
+    var report_month_list_income   : [InSubGetReportincomeRes]
+    var report_month_list_Expenses   : [InSubGetReportExpensesRes]
 }
 
 struct InSubGetReportincomeRes : Codable {

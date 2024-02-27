@@ -182,4 +182,152 @@ extension Date {
                return calender.date(from: dateComponents)
            }
        }
+    
+    
+}
+
+
+class DateConverter {
+    static func convertUnixTimestampToDateString(timestamp: TimeInterval) -> String {
+        // Create Date from Unix timestamp
+        let date = Date(timeIntervalSince1970: timestamp)
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.string(from: date)
+
+        return dateString
+    }
+    static func convertUnixTimestampToMonthString(timestamp: TimeInterval) -> String {
+        // Create Date from Unix timestamp
+        let date = Date(timeIntervalSince1970: timestamp)
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "MMMM yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.string(from: date)
+
+        return dateString
+    }
+    static func convertUnixTimestampToYearString(timestamp: TimeInterval) -> String {
+        // Create Date from Unix timestamp
+        let date = Date(timeIntervalSince1970: timestamp)
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.string(from: date)
+
+        return dateString
+    }
+    static func convertUnixTimestampToDayString(timestamp: TimeInterval) -> String {
+        // Create Date from Unix timestamp
+        let date = Date(timeIntervalSince1970: timestamp)
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "dd MM yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.string(from: date)
+
+        return dateString
+    }
+    static func convertUnixTimestampToWeekString(timestamp: TimeInterval) -> String {
+        // Create Date from Unix timestamp
+        let date = Date(timeIntervalSince1970: timestamp)
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "dd MM yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.string(from: date)
+
+        return dateString
+    }
+    static func convertStringtoYearDate(string: String) -> Date {
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.date(from: string)
+
+        return dateString!
+    }
+    static func convertStringtoMonthDate(string: String) -> Date {
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "MMM yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.date(from: string)
+
+        return dateString!
+    }
+    static func convertStringtoDayDate(string: String) -> Date {
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "dd MM yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.date(from: string)
+
+        return dateString!
+    }
+    static func convertStringtoWeekDate(string: String) -> Date {
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "dd MM yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.date(from: string)
+
+        return dateString!
+    }
+    static func convertDatetoMonthString(date: Date) -> String {
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "MMMM yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.string(from: date)
+
+        return dateString
+    }
+    static func convertDatetoDayString(date: Date) -> String {
+
+        // Set the desired date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "dd MM yyyy"
+
+        // Convert Date to a string representation of the date
+        let dateString = dateFormatter.string(from: date)
+
+        return dateString
+    }
 }

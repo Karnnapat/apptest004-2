@@ -69,6 +69,9 @@ class ToTalSummarize_ViewController: UIViewController, MMYYYY_dropdownDelegate {
 //        btn_Left.addTarget(self, action: #selector(leftTapAction(_:)), for: .touchUpInside)
 //        AllTapped()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        ReportSumarizeData()
+    }
 //    MARK: - Chart
     func setupBarChart() {
         setupScrollView()
@@ -1015,10 +1018,10 @@ class ToTalSummarize_ViewController: UIViewController, MMYYYY_dropdownDelegate {
                 dateFormatterforDrop.calendar = Calendar(identifier: .gregorian)
                 dateFormatterforDrop.locale = Locale(identifier: "th-TH")
                 dateFormatterforDrop.dateFormat = "MMMM yyyy"
-                let Stringdate = self.convertUnixTimestampToDateStringforDropDown(timestamp: TimeInterval(Unixtime))
-                let StringSMonths = dateFormatterforDrop.date(from: Stringdate)
+                let Stringdate = DateConverter.convertUnixTimestampToMonthString(timestamp: TimeInterval(Unixtime))
+                let StringSMonths = DateConverter.convertStringtoMonthDate(string: Stringdate)
                 let StringSMonth = StringSMonths
-                self.lb_Date.text = dateFormatterforDrop.string(from: StringSMonth ?? Date())
+                self.lb_Date.text = DateConverter.convertDatetoMonthString(date: StringSMonth)
                 self.startOfMonth = StringSMonths
                 self.ReportSumarizemodel.start_timestamp = Unixtime
                 self.ReportSumarizemodel.datatype = "month"
@@ -1029,15 +1032,6 @@ class ToTalSummarize_ViewController: UIViewController, MMYYYY_dropdownDelegate {
                 
             })
             vc.addsendendUnixAction(handlerendUnixtime: {Unixtime in
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.calendar = Calendar(identifier: .gregorian)
-//                dateFormatter.locale = Locale(identifier: "th-TH")
-//                dateFormatter.dateFormat = "MMMM-yyyy"
-//                let Stringdate = self.convertUnixTimestampToDateString(timestamp: TimeInterval(Unixtime))
-//                self.EndOfMonth = dateFormatter.date(from: Stringdate)
-//                self.ReportSumarizemodel.end_timestamp = Unixtime
-//                self.endDate = Unixtime
-//                self.reportsendModel.end_timestamp = self.endDate
                 
             })
             
@@ -1060,11 +1054,11 @@ class ToTalSummarize_ViewController: UIViewController, MMYYYY_dropdownDelegate {
                 
                 let calendar = Calendar.current
                 
-                let Stringdate = self.convertUnixTimestampToDateStringforYear(timestamp: TimeInterval(Unixtime))
-                let StringSMonths = dateFormatterforDrop.date(from: Stringdate)
+                let Stringdate = DateConverter.convertUnixTimestampToYearString(timestamp: TimeInterval(Unixtime))
+                let StringSMonths = DateConverter.convertStringtoYearDate(string: Stringdate)
                 let StringSMonth = StringSMonths
                 
-                let startofyear = calendar.date(from: calendar.dateComponents([.year], from: calendar.startOfDay(for: StringSMonth!)))
+                let startofyear = calendar.date(from: calendar.dateComponents([.year], from: calendar.startOfDay(for: StringSMonth)))
                 let startyear = calendar.date(byAdding: DateComponents(hour: 7),to: startofyear!)
                 
                 let endOfYear = calendar.date(byAdding: DateComponents(year: 1, second: -1), to: startyear!)
@@ -1109,58 +1103,6 @@ class ToTalSummarize_ViewController: UIViewController, MMYYYY_dropdownDelegate {
         strDate = Date
         self.ReportSumarizeData()
 
-    }
-
-    func convertUnixTimestampToDateString(timestamp: TimeInterval) -> String {
-        // สร้าง Date จาก Unix timestamp
-        let date = Date(timeIntervalSince1970: timestamp)
-
-        // กำหนดรูปแบบของวันที่ที่คุณต้องการ
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
-
-         // เปลี่ยนรูปแบบตามความต้องการ
-
-        // แปลง Date เป็นสตริงของวันที่
-        let dateString = dateFormatter.string(from: date)
-
-        return dateString
-    }
-    
-    func convertUnixTimestampToDateStringforDropDown(timestamp: TimeInterval) -> String {
-        // สร้าง Date จาก Unix timestamp
-        let date = Date(timeIntervalSince1970: timestamp)
-
-        // กำหนดรูปแบบของวันที่ที่คุณต้องการ
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        dateFormatter.locale = Locale(identifier: "th-TH")
-        dateFormatter.dateFormat = "MMMM yyyy"
-
-         // เปลี่ยนรูปแบบตามความต้องการ
-
-        // แปลง Date เป็นสตริงของวันที่
-        let dateString = dateFormatter.string(from: date)
-
-        return dateString
-    }
-    func convertUnixTimestampToDateStringforYear(timestamp: TimeInterval) -> String {
-        // สร้าง Date จาก Unix timestamp
-        let date = Date(timeIntervalSince1970: timestamp)
-
-        // กำหนดรูปแบบของวันที่ที่คุณต้องการ
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        dateFormatter.locale = Locale(identifier: "th-TH")
-        dateFormatter.dateFormat = "yyyy"
-
-         // เปลี่ยนรูปแบบตามความต้องการ
-
-        // แปลง Date เป็นสตริงของวันที่
-        let dateString = dateFormatter.string(from: date)
-
-        return dateString
     }
     
 //      MARK: - AlmoFire API

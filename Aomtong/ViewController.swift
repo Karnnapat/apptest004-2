@@ -109,12 +109,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.CV_inTBReport.register(UINib(nibName: "Report_CV", bundle: nil), forCellWithReuseIdentifier: "Report_CV")
         cell.CV_inTBReport.dataSource = self
         cell.CV_inTBReport.delegate = self
+        
         if segment.selectedSegmentIndex == 0 {
             DispatchQueue.global().async{
                 Thread.sleep(forTimeInterval: 0)
                 DispatchQueue.main.async{
-                    let NoStringCertain = String((self.getreportRes.first?.report_month_list_income?.first?.total_Income_Certain!.filter { $0.isNumber || $0 == "."}) ?? "")
-                    let NoStringUnCertain = String((self.getreportRes.first?.report_month_list_income?.first?.total_Income_Uncertain!.filter { $0.isNumber || $0 == "."})!)
+                    let NoStringCertain = String((self.getreportRes.first?.report_month_list_income.first?.total_Income_Certain!.filter { $0.isNumber || $0 == "."}) ?? "")
+                    let NoStringUnCertain = String((self.getreportRes.first?.report_month_list_income.first?.total_Income_Uncertain!.filter { $0.isNumber || $0 == "."})!)
                     
                     let Certain = NumberFormatter().number(from: NoStringCertain)
                     let Uncertain =  NumberFormatter().number(from: NoStringUnCertain)
@@ -154,14 +155,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.colorDatatype1.backgroundColor = ._6_DBAD_8
             cell.lb_reporttype.text = "รายการย้อนหลัง"
             cell.MMYYYY_Dropdown.text = strDate
-            if getreportRes.first?.report_month_list_income?.first?.report_List?.count == 0 {
+            if getreportRes.first?.report_month_list_income.first?.report_List?.count == 0 {
                 cell.CV_inTBReport.isHidden = true
                 cell.lb_reportnone.isHidden = false
-//                cell.CV_inTBReport.backgroundColor = .clear
+                cell.CV_inTBReport.backgroundColor = .clear
             }else{
                 cell.CV_inTBReport.isHidden = false
                 cell.lb_reportnone.isHidden = true
-//                cell.CV_inTBReport.backgroundColor = .clear
+                cell.CV_inTBReport.backgroundColor = .clear
             }
             cell.CV_inTBReport.reloadData()
             let taptocreatepinpage = UITapGestureRecognizer(target: self, action: #selector(Dropdown))
@@ -172,8 +173,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     Thread.sleep(forTimeInterval: 0)
                     DispatchQueue.main.async{
                         
-                        let Necessary = String((self.getreportRes.first?.report_month_list_Expenses?.first?.total_Expenses_Necessary!.filter { $0.isNumber || $0 == "."}) ?? "")
-                        let Unnecessary = String((self.getreportRes.first?.report_month_list_Expenses?.first?.total_Expenses_Unnecessary!.filter { $0.isNumber || $0 == "."})!)
+                        let Necessary = String((self.getreportRes.first?.report_month_list_Expenses.first?.total_Expenses_Necessary!.filter { $0.isNumber || $0 == "."}) ?? "")
+                        let Unnecessary = String((self.getreportRes.first?.report_month_list_Expenses.first?.total_Expenses_Unnecessary!.filter { $0.isNumber || $0 == "."})!)
                         
 //                        let Necessary = NumberFormatter().number(from: self.getreportRes.first?.report_month_list_Expenses?.first?.total_Expenses_Necessary ?? "")
 //                        let Unnecessary =  NumberFormatter().number(from: self.getreportRes.first?.report_month_list_Expenses?.first?.total_Expenses_Unnecessary ?? "")
@@ -217,7 +218,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 segment.selectedSegmentTintColor = .FF_8686
                 cell.lb_reporttype.text = "รายการย้อนหลัง"
                 cell.MMYYYY_Dropdown.text = strDate
-                if getreportRes.first?.report_month_list_income?.first?.report_List?.count == 0 {
+                if getreportRes.first?.report_month_list_Expenses.first?.report_List?.count == 0 {
                     cell.CV_inTBReport.isHidden = true
                 }else{
                     cell.CV_inTBReport.isHidden = false
@@ -241,9 +242,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if segment.selectedSegmentIndex == 0 {
-            return getreportRes.first?.report_month_list_income?.first?.report_List?.count ?? 0
+            return getreportRes.first?.report_month_list_income.first?.report_List?.count ?? 0
         }else if segment.selectedSegmentIndex == 1{
-            return getreportRes.first?.report_month_list_Expenses?.first?.report_List?.count ?? 0
+            return getreportRes.first?.report_month_list_Expenses.first?.report_List?.count ?? 0
         }
         return 0
     }
@@ -254,10 +255,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch segment.selectedSegmentIndex {
         case 0 :
             vc.delState = .delincome
-            vc.datatoDel = getreportRes.first?.report_month_list_income?.first?.report_List?[indexPath.row] ?? AllListReportInSubRes()
+            vc.datatoDel = getreportRes.first?.report_month_list_income.first?.report_List?[indexPath.row] ?? AllListReportInSubRes()
         case 1 :
             vc.delState = .delexpenses
-            vc.dataExpensestoDel = getreportRes.first?.report_month_list_Expenses?.first?.report_List?[indexPath.row] ?? AllListReportInSubRes()
+            vc.dataExpensestoDel = getreportRes.first?.report_month_list_Expenses.first?.report_List?[indexPath.row] ?? AllListReportInSubRes()
         
         default:
             break
@@ -276,7 +277,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         lb_income.text = getreportRes.first?.totalIncome
         lb_expenses.text = getreportRes.first?.totalExpenses
         if segment.selectedSegmentIndex == 0 {
-            let income = getreportRes.first?.report_month_list_income?.first?.report_List?[indexPath.item]
+            let income = getreportRes.first?.report_month_list_income.first?.report_List?[indexPath.item]
             let ReDate = Double(income?.timestamp ?? 0)
             let ReDateStr = convertUnixTimestampToDateString(timestamp: ReDate)
             cell.lb_CatReport.text = income?.category_name
@@ -295,7 +296,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
         }else if segment.selectedSegmentIndex == 1 {
-            let expenses = getreportRes.first?.report_month_list_Expenses?.first?.report_List?[indexPath.item]
+            let expenses = getreportRes.first?.report_month_list_Expenses.first?.report_List?[indexPath.item]
             let ReDate = Double(expenses?.timestamp ?? 0)
             let ReDateStr = convertUnixTimestampToDateString(timestamp: ReDate)
             cell.lb_CatReport.text = expenses?.category_name
@@ -479,6 +480,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         if let cell = self.report_table.dequeueReusableCell(withIdentifier: "Report_tbCell") as? Report_tbCell {
                             cell.CV_inTBReport.reloadData()
                         }
+                        self.lb_total.text = self.getreportRes.first?.totalBalance
+                        self.lb_income.text = self.getreportRes.first?.totalIncome
+                        self.lb_expenses.text = self.getreportRes.first?.totalExpenses
                         print("Report : Data " + "\(self.getreportRes)")
                     }
                 },onError: { error in

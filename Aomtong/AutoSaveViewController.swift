@@ -17,7 +17,7 @@ class AutoSaveViewController: UIViewController, UICollectionViewDelegate, UIColl
 
 
     let myDropDown = DropDown()
-    let OptionsValuesArray = ["ทั้งหมด", "ทุกวัน", "ทุกสัปดาห์", "ทุกเดือน", "ทุก 3 เดือน"]
+    let OptionsValuesArray = ["ทั้งหมด", "ทุกวัน", "ทุกสัปดาห์", "ทุกเดือน", "ทุก3เดือน"]
     
     @IBOutlet weak var lb_DropDownSelected: UILabel!
     @IBOutlet weak var btn_DropDown: UIButton!
